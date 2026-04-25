@@ -8,11 +8,53 @@ A lightweight, aesthetically pleasing Hyprland configuration optimized for low-e
 - **Minimalist Aesthetic**: Clean "Pill" styled Waybar and minimalist Rofi menus.
 - **Hardware Verified**: Tested on 2-core processors with 4GB RAM.
 
-## 🛠️ Hardware Requirements
-- **Recommended**: Intel Celeron / Pentium / Core i3 (2+ cores)
-- **Memory**: 4GB+ RAM
-- **GPU**: Integrated Intel UHD / AMD Radeon
-- **OS**: Arch Linux or EndeavourOS (recommended)
+## 🛠️ System Requirements
+- **OS**: Arch Linux or EndeavourOS (required for the package names in `install.sh`).
+- **Hardware**: Optimized for low-spec (Celeron N4020+), but works perfectly on high-end systems.
+- **AUR Helper**: `yay` or `paru` (required for Matugen and Ghostty).
+
+## 📦 Core Dependencies
+These will be installed automatically by `install.sh`, but are listed here for manual setup:
+
+| Component | Package Name | Purpose |
+| :--- | :--- | :--- |
+| **Window Manager** | `hyprland` | Core desktop environment |
+| **Status Bar** | `waybar` | Top panel with Matugen integration |
+| **Wallpaper** | `awww` | High-performance wallpaper daemon |
+| **App Menu** | `rofi-wayland` | Application launcher and power menu |
+| **Notifications** | `dunst` | Minimalist notification daemon |
+| **Theming** | `matugen-bin` | **Critical**: Generates colors from wallpapers |
+| **Terminal** | `kitty` or `ghostty` | GPU-accelerated terminals |
+| **Brightness** | `brightnessctl` | Backlight control |
+| **Audio** | `wireplumber` | Audio control via `wpctl` |
+
+## 󰛖 Fonts Required
+For the icons to display correctly, you **must** have a Nerd Font installed:
+- `ttf-jetbrains-mono-nerd` (Default in this rice)
+- `ttf-font-awesome` (Optional backup)
+
+## 📦 Programs
+List of programs and tools I use.
+
+| Component | Program |
+| :--- | :--- |
+| **Windows Manager** 🪟 | `hyprland` |
+| **Terminal** 🖥️ | `kitty` |
+| **Shell** 🐚 | `zsh` / theme |
+| **Fetch** 🖼️ | `catnip` / icon |
+| **File Manager** 📁 | `ranger` |
+| **Editor** 📝 | `neovim` / `nvchad` |
+| **Browser** 🌐 | `firefox` / startpage / startpage wal |
+| **Bar** 📊 | `waybar` |
+| **Launcher** 🚀 | `rofi` |
+| **Color Theme** 🎨 | `pywal` |
+| **Lockscreen** 🔒 | `hyprlock` |
+| **Login Menu** 🚪 | `sddm` |
+| **Music Player** 🎵 | `ncspot` |
+| **Visualiser** 📊 | `cava` |
+| **Lyrics** 🎤 | `sptlrx` |
+| **Pomodoro** 🍅 | `tomato-c` |
+| **Others** 🌱 | `cbonsai`, `colorscripts`, `asciiquarium` |
 
 ## 📦 Installation
 
