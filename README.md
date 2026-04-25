@@ -86,7 +86,7 @@ If you are on a high-spec system and want to enable blur/animations:
 - `SUPER + SHIFT + 1-9`: Move window to workspace
 
 ## 🎨 Screenshots
-*(Add your screenshots here)*
-
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/homepage.jpg)
+![System Monitor (htop)](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/htop.jpg)
 ---
 *Developed with love for low-spec warriors.*
