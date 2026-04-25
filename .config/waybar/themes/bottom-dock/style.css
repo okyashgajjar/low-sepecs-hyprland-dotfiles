@@ -1,4 +1,4 @@
-@import "~/.config/waybar/colors.css";
+@import "/home/riceyg/.config/waybar/colors.css";
 
 * {
     border: none;
@@ -87,4 +87,8 @@ tooltip label {
     color: @error;
     padding: 0 12px;
     font-size: 18px;
+}
+
+#custom-updates {
+    color: @secondary;
 }

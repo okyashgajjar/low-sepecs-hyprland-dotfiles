@@ -26,6 +26,7 @@
         "network",
         "bluetooth",
         "battery",
+        "custom/updates",
         "custom/power"
     ],
 
@@ -129,5 +130,15 @@
         "format": "⏻",
         "on-click": "rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu -theme ~/.config/rofi/power-menu.rasi",
         "tooltip": false
-    }
+    },
+
+    "custom/updates": {
+    "format": "\udb81\udeb0  {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "interval": 3600,
+    "on-click": "kitty -e yay -Syu; pkill -RTMIN+8 waybar",
+    "signal": 8
+},
 }
