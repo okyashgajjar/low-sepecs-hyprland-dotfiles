@@ -1,0 +1,76 @@
+@import "/home/riceyg/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "NotoSansMono Nerd Font", "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@surface, 0.85);
+    color: @on_surface;
+    border-bottom: 1px solid alpha(@outline, 0.3);
+}
+
+tooltip {
+    background: @surface_container_highest;
+    border: 1px solid @outline_variant;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+#custom-launcher {
+    font-size: 16px;
+    color: @primary;
+    padding: 0 16px;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @on_surface_variant;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @primary;
+    text-shadow: 0 0 5px alpha(@primary, 0.4);
+}
+
+#workspaces button.active {
+    color: @primary;
+}
+
+#clock {
+    color: @on_surface;
+    padding: 0 16px;
+}
+
+#tray,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery {
+    padding: 0 10px;
+    color: @on_surface;
+}
+
+#battery.charging, #battery.plugged {
+    color: @primary;
+}
+
+#custom-power {
+    color: @error;
+    padding: 0 16px;
+    font-size: 14px;
+}

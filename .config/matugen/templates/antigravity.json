@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorCustomizations": {
+        "editor.background": "{{colors.surface.default.hex}}",
+        "editor.foreground": "{{colors.on_surface.default.hex}}",
+        "sideBar.background": "{{colors.surface_container.default.hex}}",
+        "sideBar.foreground": "{{colors.on_surface.default.hex}}",
+        "sideBarSectionHeader.background": "{{colors.surface_container_high.default.hex}}",
+        "activityBar.background": "{{colors.surface_container_high.default.hex}}",
+        "activityBar.foreground": "{{colors.primary.default.hex}}",
+        "activityBar.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+        "statusBar.background": "{{colors.primary.default.hex}}",
+        "statusBar.foreground": "{{colors.on_primary.default.hex}}",
+        "titleBar.activeBackground": "{{colors.surface_container_lowest.default.hex}}",
+        "titleBar.activeForeground": "{{colors.on_surface.default.hex}}",
+        "tab.activeBackground": "{{colors.surface.default.hex}}",
+        "tab.activeForeground": "{{colors.primary.default.hex}}",
+        "tab.inactiveBackground": "{{colors.surface_container_low.default.hex}}",
+        "tab.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+        "list.activeSelectionBackground": "{{colors.primary_container.default.hex}}",
+        "list.activeSelectionForeground": "{{colors.on_primary_container.default.hex}}",
+        "list.hoverBackground": "{{colors.surface_variant.default.hex}}",
+        "terminal.background": "{{colors.surface.default.hex}}",
+        "terminal.foreground": "{{colors.on_surface.default.hex}}"
+    }
+}

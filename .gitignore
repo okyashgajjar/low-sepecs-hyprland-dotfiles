@@ -1,0 +1,22 @@
+# Logs
+*.log
+*.err
+*.out
+
+# Caches
+.cache/
+**/__pycache__/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# User-specific / Sensitive
+.netrc
+.ssh/
+*auth*
+*token*
+
+# Waybar/Hyprland specific runtime files
+.config/waybar/scripts/temp_*
+.config/hypr/scripts/temp_*

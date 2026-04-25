@@ -1,0 +1,35 @@
+[config]
+# Generate colors in dark mode by default
+default_mode = "dark"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/colors.css"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/colors.conf"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland.conf"
+output_path = "~/.config/hypr/colors.conf"
+
+[templates.pywalfox]
+input_path = "~/.config/matugen/templates/pywalfox.json"
+output_path = "~/.cache/wal/colors.json"
+
+[templates.antigravity]
+input_path = "~/.config/matugen/templates/antigravity.json"
+output_path = "~/.config/Antigravity/User/settings.json"
+
+[templates.brave]
+input_path = "~/.config/matugen/templates/brave.css"
+output_path = "~/.config/brave/colors.css"
+
+[templates.dolphin]
+input_path = "~/.config/matugen/templates/dolphin.colors"
+output_path = "~/.local/share/color-schemes/Matugen.colors"

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Options
+shutdown="⏻ Shutdown"
+reboot=" Reboot"
+lock=" Lock"
+suspend="󰒲 Suspend"
+logout="󰗽 Logout"
+
+# Passed option
+chosen="$@"
+
+case ${chosen} in
+    $shutdown)
+        systemctl poweroff
+        ;;
+    $reboot)
+        systemctl reboot
+        ;;
+    $lock)
+        # Check if hyprlock or swaylock is installed
+        if command -v hyprlock >/dev/null; then
+            hyprlock
+        elif command -v swaylock >/dev/null; then
+            swaylock
+        fi
+        ;;
+    $suspend)
+        systemctl suspend
+        ;;
+    $logout)
+        hyprctl dispatch exit
+        ;;
+    *)
+        echo "$lock"
+        echo "$suspend"
+        echo "$logout"
+        echo "$reboot"
+        echo "$shutdown"
+        ;;
+esac

@@ -1,0 +1,35 @@
+/* Matugen generated colors for Brave */
+:root {
+    --bg: {{colors.surface.default.hex}};
+    --fg: #f1f1f1; /* Using a fixed light color for better readability on dark themes */
+    --accent: {{colors.primary.default.hex}};
+    --primary: {{colors.primary.default.hex}};
+    --secondary: {{colors.secondary.default.hex}};
+    --surface: {{colors.surface_container.default.hex}};
+    --border: {{colors.outline_variant.default.hex}};
+}
+
+/* Global Styles for Brave via Stylus */
+html, body {
+    background-color: var(--bg) !important;
+    color: var(--fg) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Common UI Elements */
+a { color: var(--accent) !important; }
+input, select, textarea { 
+    background-color: var(--surface) !important; 
+    color: var(--fg) !important; 
+    border: 1px solid var(--border) !important; 
+}
+button {
+    background-color: var(--accent) !important;
+    color: var(--bg) !important;
+    border-radius: 4px !important;
+}

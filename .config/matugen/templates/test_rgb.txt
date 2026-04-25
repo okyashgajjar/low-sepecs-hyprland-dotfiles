@@ -1,0 +1,2 @@
+Test RGB: {{colors.primary.default.rgb}}
+Test Red: {{colors.primary.default.red}}, Green: {{colors.primary.default.green}}, Blue: {{colors.primary.default.blue}}

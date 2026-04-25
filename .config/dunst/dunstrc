@@ -1,0 +1,84 @@
+# ──────────────────────────────────────────────
+#   Dunst Notifications – Catppuccin Mocha
+# ──────────────────────────────────────────────
+
+[global]
+    # ── Position ─────────────────────────────
+    origin = top-right
+    offset = 10x10
+    monitor = 0
+    follow = mouse
+
+    # ── Geometry ─────────────────────────────
+    width = 320
+    height = (0, 300)
+    notification_limit = 5
+
+    # ── Appearance ───────────────────────────
+    corner_radius = 8
+    frame_width = 2
+    frame_color = "#89b4fa"
+    separator_height = 2
+    separator_color = frame
+    gap_size = 4
+    padding = 12
+    horizontal_padding = 14
+    text_icon_padding = 12
+
+    # ── Typography ───────────────────────────
+    font = NotoSansMono Nerd Font 11
+    line_height = 0
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    word_wrap = true
+    ellipsize = end
+
+    # ── Icons ────────────────────────────────
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps/
+
+    # ── Behaviour ────────────────────────────
+    sort = true
+    idle_threshold = 120
+    show_age_threshold = 60
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = true
+
+    # ── History ──────────────────────────────
+    sticky_history = true
+    history_length = 50
+
+    # ── Mouse ────────────────────────────────
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+    # ── Misc ─────────────────────────────────
+    browser = /usr/bin/firefox
+    always_run_script = true
+    enable_recursive_icon_lookup = true
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#313244"
+    highlight = "#89b4fa"
+    timeout = 5
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+    highlight = "#89b4fa"
+    timeout = 8
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    highlight = "#f38ba8"
+    timeout = 0

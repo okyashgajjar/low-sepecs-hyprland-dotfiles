@@ -1,0 +1,90 @@
+@import "/home/riceyg/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "NotoSansMono Nerd Font", "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @surface;
+    border: 2px solid @outline_variant;
+    border-radius: 16px;
+    padding: 0 12px;
+}
+
+.modules-center {
+    background: @surface_container_highest;
+}
+
+tooltip {
+    background: @surface_container_highest;
+    border: 2px solid @primary;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+#custom-launcher {
+    font-size: 24px;
+    color: @primary;
+    padding: 0 12px;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 6px;
+    margin: 4px;
+    color: @surface_variant;
+    background: @surface_container_highest;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: @primary;
+    color: @on_primary;
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary;
+    min-width: 30px;
+}
+
+#clock {
+    color: @on_surface;
+    padding: 0 12px;
+}
+
+#tray,
+#pulseaudio,
+#network,
+#battery {
+    padding: 0 10px;
+    color: @on_surface;
+}
+
+#battery.charging, #battery.plugged {
+    color: @primary;
+}
+
+#custom-power {
+    color: @error;
+    padding: 0 12px;
+    font-size: 18px;
+}

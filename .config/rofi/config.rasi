@@ -1,0 +1,16 @@
+/* ──────────────────────────────────────────────
+ *   Rofi Configuration
+ * ────────────────────────────────────────────── */
+
+configuration {
+    modi:                "drun,run,window";
+    show-icons:          true;
+    icon-theme:          "Papirus-Dark";
+    display-drun:        " Apps";
+    display-run:         " Run";
+    display-window:      " Windows";
+    drun-display-format: "{name}";
+    font:                "NotoSansMono Nerd Font 12";
+}
+
+@theme "~/.config/rofi/theme.rasi"

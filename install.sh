@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# ──────────────────────────────────────────────────────────────────────────────
+#   Low-Spec Hyprland Dotfiles Installer
+#   Optimized for Intel Celeron / 4GB RAM Systems
+# ──────────────────────────────────────────────────────────────────────────────
+
+set -e
+
+echo "Starting installation..."
+
+# Check for Arch/EndeavourOS
+if [ ! -f /etc/arch-release ]; then
+    echo "Error: This script is intended for Arch-based distributions (Arch/EndeavourOS)."
+    exit 1
+fi
+
+# List of dependencies
+DEPS=(
+    "hyprland" "waybar" "swww" "rofi-wayland" "dunst" "kitty" 
+    "matugen-bin" "ttf-jetbrains-mono-nerd" "brightnessctl" "wpctl"
+)
+
+# Install dependencies if using yay
+if command -v yay &> /dev/null; then
+    echo "Installing dependencies..."
+    yay -S --needed "${DEPS[@]}"
+else
+    echo "Please ensure you have the following installed: ${DEPS[*]}"
+fi
+
+# Backup existing configs
+BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+CONFIGS=("hypr" "waybar" "kitty" "rofi" "dunst" "matugen")
+
+for config in "${CONFIGS[@]}"; do
+    if [ -d "$HOME/.config/$config" ]; then
+        echo "Backing up ~/.config/$config to $BACKUP_DIR"
+        mv "$HOME/.config/$config" "$BACKUP_DIR/"
+    fi
+    echo "Installing new $config config..."
+    cp -r ".config/$config" "$HOME/.config/"
+done
+
+echo "Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C)."
+echo "Your old configs are saved in: $BACKUP_DIR"

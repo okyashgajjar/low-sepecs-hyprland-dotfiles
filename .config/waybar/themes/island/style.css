@@ -1,0 +1,93 @@
+@import "/home/riceyg/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "NotoSansMono Nerd Font", "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* The actual bar background is set on the container of modules */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @surface;
+    border: 2px solid @primary;
+    padding: 0 10px;
+}
+
+.modules-left {
+    border-radius: 22px 0 0 22px;
+    border-right: none;
+}
+
+.modules-center {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.modules-right {
+    border-radius: 0 22px 22px 0;
+    border-left: none;
+}
+
+tooltip {
+    background: @surface_container_highest;
+    border: 2px solid @primary;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+#custom-launcher {
+    font-size: 20px;
+    color: @primary;
+    padding: 0 10px;
+}
+
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @surface_variant;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @primary;
+}
+
+#clock {
+    color: @on_surface;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+#tray,
+#pulseaudio,
+#network,
+#battery {
+    padding: 0 8px;
+    color: @on_surface;
+}
+
+#battery.charging, #battery.plugged {
+    color: @primary;
+}
+
+#custom-power {
+    color: @error;
+    padding: 0 10px;
+    font-size: 18px;
+}

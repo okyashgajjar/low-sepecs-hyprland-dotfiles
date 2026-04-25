@@ -1,0 +1,142 @@
+/* ──────────────────────────────────────────────
+ *   Waybar – Dynamic Pill Theme (Matugen)
+ * ────────────────────────────────────────────── */
+
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @on_surface;
+}
+
+/* ── Module Base (Pills) ───────────────────── */
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#cpu,
+#memory,
+#custom-updates,
+#custom-launcher,
+#custom-power {
+    background: @surface;
+    color: @on_surface;
+    border-radius: 20px;
+    padding: 2px 14px;
+    margin: 4px 4px;
+    border: 1px solid @surface_variant;
+    transition: all 0.3s cubic-bezier(.55,-0.04,.3,1.44);
+}
+
+/* ── Specific Module Styles ────────────────── */
+
+#workspaces {
+    background: @surface;
+    padding: 0px 8px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    color: @on_surface_variant;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @primary;
+    background: @primary_container;
+    border-radius: 15px;
+    margin: 4px 2px;
+}
+
+#workspaces button.urgent {
+    color: @on_error;
+    background: @error;
+}
+
+#workspaces button:hover {
+    background: @surface_variant;
+    border-radius: 15px;
+    color: @on_surface;
+}
+
+#custom-launcher {
+    color: @primary;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 16px;
+}
+
+#clock {
+    color: @secondary;
+}
+
+#pulseaudio {
+    color: @tertiary;
+}
+
+#network {
+    color: @primary;
+}
+
+#bluetooth {
+    color: @primary;
+}
+
+#battery {
+    color: @tertiary;
+}
+
+#battery.charging, #battery.plugged {
+    color: @primary;
+}
+
+@keyframes blink {
+    to {
+        background-color: @surface;
+        color: @on_surface;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @error;
+    color: @on_error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-updates {
+    color: @secondary;
+}
+
+#custom-power {
+    color: @error;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* ── Hover Effects ────────────────────────── */
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-updates:hover,
+#custom-launcher:hover,
+#custom-power:hover {
+    background: @surface_variant;
+    border-color: @outline;
+}
