@@ -2,6 +2,9 @@
 
 A lightweight, aesthetically pleasing Hyprland configuration optimized for low-end hardware (e.g., Intel Celeron N4020). Built for speed without sacrificing the modern "blurred" look through clever color palettes and efficient module design.
 
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/homepage.jpg)
+![System Monitor (htop)](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/htop.jpg)
+
 ## 🚀 Highlights
 - **Engineered for Efficiency**: Animations and blur are disabled by default to maintain <10% CPU usage.
 - **Dynamic Theming**: Powered by **Matugen**, colors automatically shift to match your wallpaper.
@@ -84,9 +87,5 @@ If you are on a high-spec system and want to enable blur/animations:
 - `SUPER + Q`: Kill Active Window
 - `SUPER + T`: Select Wallpaper & Update Theme
 - `SUPER + SHIFT + 1-9`: Move window to workspace
-
-## 🎨 Screenshots
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/homepage.jpg)
-![System Monitor (htop)](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/htop.jpg)
 ---
 *Developed with love for low-spec warriors.*
