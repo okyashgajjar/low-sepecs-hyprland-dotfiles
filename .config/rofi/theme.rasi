@@ -70,9 +70,9 @@ element {
 }
 
 element selected.normal {
-    background-color: alpha(@bg-sel, 0.2);
+    background-color: @bg-sel;
     border:           1px solid @accent;
-    text-color:       @accent;
+    text-color:       @bg;
 }
 
 element-icon {
