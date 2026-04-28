@@ -90,5 +90,23 @@ If you are on a high-spec system and want to enable blur/animations:
 - `SUPER + Q`: Kill Active Window
 - `SUPER + T`: Select Wallpaper & Update Theme
 - `SUPER + SHIFT + 1-9`: Move window to workspace
+
+
+## Waybar-Styles
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/bottom)
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/retro-styled.jpg)
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/minimal-dark.jpg)
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/mount-fuji.jpg)
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/dynamic-island.jpg)
+
+![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/Gnome-desktop.jpg)
+
+
+
 ---
 *Developed with love for low-spec warriors.*
