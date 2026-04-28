@@ -1,0 +1,59 @@
+@import "/home/riceyg/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(#000000, 0.85);
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+#workspaces {
+    background: transparent;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    color: rgba(255, 255, 255, 0.4);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @surface;
+    background: @primary;
+    border-radius: 12px;
+    margin: 4px 2px;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#battery {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#clock {
+    padding-left: 15px;
+}
+
+#battery {
+    padding-right: 15px;
+}
+
+#battery.charging {
+    color: #4cd964; /* Apple Green */
+}
+
+#battery.critical:not(.charging) {
+    color: #ff3b30; /* Apple Red */
+}
