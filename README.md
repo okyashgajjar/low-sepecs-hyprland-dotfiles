@@ -29,6 +29,8 @@ These will be installed automatically by `install.sh`, but are listed here for m
 | **Notifications** | `dunst` | Minimalist notification daemon |
 | **Theming** | `matugen-bin` | **Critical**: Generates colors from wallpapers |
 | **Terminal** | `kitty` or `ghostty` | GPU-accelerated terminals |
+| **Shell** | `zsh` | Default shell (includes Oh My Zsh) |
+| **System Fetch**| `fastfetch` | Shows system info on terminal startup |
 | **Brightness** | `brightnessctl` | Backlight control |
 | **Audio** | `wireplumber` | Audio control via `wpctl` |
 

@@ -19,6 +19,7 @@ fi
 DEPS=(
     "hyprland" "waybar" "swww" "rofi-wayland" "dunst" "kitty" 
     "matugen-bin" "ttf-jetbrains-mono-nerd" "brightnessctl" "wpctl"
+    "zsh" "fastfetch" "curl" "git"
 )
 
 # Install dependencies if using yay
@@ -48,6 +49,18 @@ done
 echo "Installing default wallpapers..."
 mkdir -p "$HOME/wallpapers"
 cp -rn wallpapers/* "$HOME/wallpapers/" 2>/dev/null || true
+
+# Install Oh My Zsh and copy .zshrc
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+echo "Installing .zshrc config..."
+if [ -f "$HOME/.zshrc" ]; then
+    mv "$HOME/.zshrc" "$BACKUP_DIR/"
+fi
+cp ".zshrc" "$HOME/.zshrc"
 
 echo "Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C)."
 echo "Your old configs are saved in: $BACKUP_DIR"
