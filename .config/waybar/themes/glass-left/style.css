@@ -1,0 +1,39 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window#waybar {
+    background: alpha(@surface, 0.6);
+    color: @on_surface;
+    border: 1px solid alpha(@outline, 0.3);
+    border-radius: 20px;
+    margin: 5px;
+}
+
+#workspaces button {
+    padding: 8px 0;
+    color: alpha(@on_surface, 0.5);
+}
+
+#workspaces button.active {
+    color: @primary;
+    background: alpha(@primary, 0.1);
+    border-radius: 10px;
+}
+
+#clock {
+    background: alpha(@surface_variant, 0.4);
+    border-radius: 12px;
+    margin: 10px 5px;
+    padding: 8px 0;
+    font-size: 11px;
+}
+
+#pulseaudio, #network, #battery, #custom-power, #custom-launcher {
+    padding: 10px 0;
+}

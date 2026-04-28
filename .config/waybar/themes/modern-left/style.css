@@ -1,0 +1,31 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#custom-launcher, #workspaces, #clock, #pulseaudio, #network, #battery, #custom-power {
+    background: @surface;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px 0;
+    border: 1px solid alpha(@outline, 0.1);
+}
+
+#workspaces button.active {
+    color: @primary;
+}
+
+#clock {
+    font-size: 11px;
+}
+
+#custom-power {
+    color: @error;
+}

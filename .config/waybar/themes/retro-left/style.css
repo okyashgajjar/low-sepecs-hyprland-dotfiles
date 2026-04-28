@@ -1,0 +1,38 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: 900;
+}
+
+window#waybar {
+    background: @surface;
+    color: @on_surface;
+    border: 3px solid @primary;
+}
+
+#workspaces button {
+    padding: 10px 0;
+    border-bottom: 2px solid alpha(@outline, 0.2);
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary;
+}
+
+#clock {
+    background: @secondary;
+    color: @on_secondary;
+    border-top: 3px solid @primary;
+    border-bottom: 3px solid @primary;
+    padding: 10px 0;
+}
+
+#custom-power {
+    background: @error;
+    color: @on_error;
+}

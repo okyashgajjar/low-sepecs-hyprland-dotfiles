@@ -1,0 +1,38 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window#waybar {
+    background: #000000;
+    color: #ffffff;
+    border-right: 2px solid @primary;
+}
+
+#workspaces button {
+    padding: 12px 0;
+}
+
+#workspaces button.active {
+    color: @primary;
+    text-shadow: 0 0 10px @primary;
+}
+
+#clock {
+    color: @secondary;
+    border-top: 1px solid @secondary;
+    border-bottom: 1px solid @secondary;
+    margin: 20px 0;
+}
+
+#pulseaudio, #network, #battery {
+    color: @tertiary;
+}
+
+#custom-power {
+    color: @error;
+}
