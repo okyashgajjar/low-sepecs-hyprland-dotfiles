@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────
- *   Rofi Theme – Catppuccin Mocha
+ *   Rofi Theme – Premium Grid (Matugen)
  * ────────────────────────────────────────────── */
 
 @import "~/.config/rofi/colors.rasi"
@@ -9,96 +9,79 @@
     bg-alt:   @background-alt;
     bg-sel:   @active;
     fg:       @foreground;
-    fg-alt:   @foreground;
     accent:   @selected;
     urgent:   @urgent;
 
     background-color: transparent;
     text-color:       @fg;
+    font:             "JetBrainsMono Nerd Font 11";
 }
 
 window {
-    width:            500px;
+    width:            800px;
+    height:           500px;
     background-color: @bg;
     border:           2px solid;
     border-color:     @accent;
-    border-radius:    8px;
-    padding:          0;
+    border-radius:    12px;
+    padding:          20px;
     location:         center;
     anchor:           center;
 }
 
 mainbox {
-    background-color: @bg;
-    border-radius:    8px;
     children:         [ inputbar, listview ];
-    spacing:          0;
-    padding:          0;
+    spacing:          20px;
 }
 
 inputbar {
     background-color: @bg-alt;
-    border-radius:    8px 8px 0 0;
-    padding:          14px 16px;
+    border-radius:    8px;
+    padding:          12px 16px;
     spacing:          10px;
     children:         [ prompt, entry ];
 }
 
 prompt {
-    background-color: transparent;
     text-color:       @accent;
-    font:             "NotoSansMono Nerd Font Bold 12";
+    font:             "JetBrainsMono Nerd Font Bold 14";
 }
 
 entry {
-    background-color: transparent;
-    text-color:       @fg;
-    placeholder:      "Search…";
+    placeholder:      "Search Apps…";
     placeholder-color: #585b70;
 }
 
 listview {
-    background-color: @bg;
-    border-radius:    0 0 8px 8px;
-    columns:          1;
-    lines:            8;
-    spacing:          0;
-    padding:          6px 0;
-    scrollbar:        false;
-    fixed-height:     true;
+    columns:          4;
+    lines:            3;
+    spacing:          15px;
+    cycle:            true;
     dynamic:          true;
+    layout:           vertical;
+    fixed-columns:    true;
 }
 
 element {
-    background-color: transparent;
-    text-color:       @fg;
-    padding:          10px 16px;
-    spacing:          12px;
-    border-radius:    0;
+    orientation:      vertical;
+    padding:          15px;
+    border-radius:    12px;
+    spacing:          10px;
 }
 
 element selected.normal {
-    background-color: @bg-sel;
-    text-color:       @bg;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    text-color: @urgent;
-}
-
-element selected.urgent {
-    background-color: @urgent;
-    text-color:       @bg;
+    background-color: alpha(@bg-sel, 0.2);
+    border:           1px solid @accent;
+    text-color:       @accent;
 }
 
 element-icon {
-    size:             24px;
-    background-color: transparent;
+    size:             48px;
+    horizontal-align: 0.5;
 }
 
 element-text {
-    background-color: transparent;
-    text-color:       inherit;
+    horizontal-align: 0.5;
     vertical-align:   0.5;
+    font:             "JetBrainsMono Nerd Font Bold 10";
 }
