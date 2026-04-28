@@ -10,14 +10,20 @@
 }
 
 window#waybar {
-    background: alpha(#000000, 0.85);
+    background: transparent;
+}
+
+/* The actual "Island" pill */
+.modules-center {
+    background: alpha(#000000, 0.95);
     color: #ffffff;
     border-radius: 20px;
+    padding: 0 10px;
+    margin-top: 10px;
 }
 
 #workspaces {
     background: transparent;
-    padding: 0 10px;
 }
 
 #workspaces button {
@@ -36,24 +42,32 @@ window#waybar {
 
 #clock,
 #pulseaudio,
+#bluetooth,
 #network,
-#battery {
+#battery,
+#custom-updates,
+#custom-power {
     padding: 0 10px;
     color: #ffffff;
 }
 
 #clock {
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
-#battery {
-    padding-right: 15px;
+#custom-power {
+    padding-right: 10px;
+    color: @error;
+}
+
+#custom-updates {
+    color: @secondary;
 }
 
 #battery.charging {
-    color: #4cd964; /* Apple Green */
+    color: #4cd964;
 }
 
 #battery.critical:not(.charging) {
-    color: #ff3b30; /* Apple Red */
+    color: #ff3b30;
 }

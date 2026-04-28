@@ -7,17 +7,17 @@
     "gtk-layer-shell": true,
     "height": 34,
     "margin-top": 10,
-    "margin-bottom": 0,
-    "margin-left": 600,
-    "margin-right": 600,
     
     "modules-left": [],
     "modules-center": [
         "clock",
         "hyprland/workspaces",
+        "custom/updates",
+        "bluetooth",
         "pulseaudio",
         "network",
-        "battery"
+        "battery",
+        "custom/power"
     ],
     "modules-right": [],
 
@@ -48,6 +48,13 @@
         "on-click": "pavucontrol"
     },
 
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂯",
+        "on-click": "~/.config/waybar/scripts/bluetooth-menu.sh"
+    },
+
     "network": {
         "interval": 5,
         "format-wifi": "󰤨",
@@ -69,5 +76,21 @@
         "format-charging": "󰂄",
         "format-plugged": "󰂄",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "custom/updates": {
+        "format": "󰚰",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/updates.sh",
+        "interval": 3600,
+        "on-click": "kitty -e yay -Syu; pkill -RTMIN+8 waybar",
+        "signal": 8
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu -theme ~/.config/rofi/power-menu.rasi",
+        "tooltip": false
     }
 }
