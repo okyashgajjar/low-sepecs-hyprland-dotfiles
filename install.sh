@@ -44,5 +44,10 @@ for config in "${CONFIGS[@]}"; do
     cp -r ".config/$config" "$HOME/.config/"
 done
 
+# Install wallpapers
+echo "Installing default wallpapers..."
+mkdir -p "$HOME/wallpapers"
+cp -rn wallpapers/* "$HOME/wallpapers/" 2>/dev/null || true
+
 echo "Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C)."
 echo "Your old configs are saved in: $BACKUP_DIR"

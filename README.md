@@ -8,6 +8,7 @@ A lightweight, aesthetically pleasing Hyprland configuration optimized for low-e
 ## 🚀 Highlights
 - **Engineered for Efficiency**: Animations and blur are disabled by default to maintain <10% CPU usage.
 - **Dynamic Theming**: Powered by **Matugen**, colors automatically shift to match your wallpaper.
+- **Included Wallpapers**: A curated set of wallpapers is bundled, so the theme selector (`SUPER + T`) works instantly without manual downloads.
 - **Minimalist Aesthetic**: Clean "Pill" styled Waybar and minimalist Rofi menus.
 - **Hardware Verified**: Tested on 2-core processors with 4GB RAM.
 
@@ -63,8 +64,8 @@ List of programs and tools I use.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/low-spec-hyprland.git
-cd low-spec-hyprland
+git clone https://github.com/okyashgajjar/low-sepecs-hyprland-dotfiles.git
+cd low-sepecs-hyprland-dotfiles
 ```
 
 ### 2. Run the install script
