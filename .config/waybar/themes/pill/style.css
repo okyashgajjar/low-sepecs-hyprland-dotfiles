@@ -2,7 +2,7 @@
  *   Waybar – Dynamic Pill Theme (Matugen)
  * ────────────────────────────────────────────── */
 
-@import "/home/riceyg/.config/waybar/colors.css";
+@import "colors.css";
 
 * {
     font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
