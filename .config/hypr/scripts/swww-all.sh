@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ──────────────────────────────────────────────
-#   Dynamic Theme Switcher
+#   Dynamic Theme Switcher (Awww + Matugen)
 # ──────────────────────────────────────────────
 
 WALLPAPER="$1"
@@ -12,23 +12,25 @@ if [ -z "$WALLPAPER" ]; then
 fi
 
 # 1. Set Wallpaper
+# Using awww-daemon
 awww img "$WALLPAPER" --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 1.5
 
 # 2. Extract colors with Matugen
+# This updates colors for Waybar, Rofi, Kitty, Hyprland, etc.
 matugen image "$WALLPAPER" -c ~/.config/matugen/config.toml --source-color-index 0
 
 # 3. Reload Waybar
+# SIGUSR2 tells waybar to reload its CSS
 killall -SIGUSR2 waybar
 
 # 4. Reload Kitty
-# (Matugen post_hook could handle this, but we'll do it explicitly if needed)
-# killall -SIGUSR1 kitty
+# SIGUSR1 tells kitty to reload its configuration
+killall -SIGUSR1 kitty
 
-# 5. Reload Rofi
-# (No reload needed, it reads config on start)
+# 5. Reload Hyprland
+# Sending a SIGUSR1 to hyprland often forces a reload of sourced files
+# or we can use hyprctl reload
+hyprctl reload
 
-# 6. Reload Pywalfox
-# pywalfox update
-
-# 7. Notify
+# 6. Notify
 notify-send "Theme Updated" "Colors extracted from $(basename "$WALLPAPER")" -i "$WALLPAPER"
