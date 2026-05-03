@@ -3,7 +3,7 @@
 #   Power / Controls Menu for Waybar
 # ──────────────────────────────────────────────
 
-THEME="$HOME/.config/rofi/power-menu.rasi"
+THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
 # ── Build menu ───────────────────────────────

@@ -3,7 +3,7 @@
 #   Bluetooth Menu for Waybar (rofi + bluetoothctl)
 # ──────────────────────────────────────────────
 
-THEME="$HOME/.config/rofi/wifi-menu.rasi"
+THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
 notify() {

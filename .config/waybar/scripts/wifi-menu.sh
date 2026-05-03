@@ -3,7 +3,7 @@
 #   WiFi Menu for Waybar (rofi + nmcli)
 # ──────────────────────────────────────────────
 
-THEME="$HOME/.config/rofi/wifi-menu.rasi"
+THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
 notify() {
