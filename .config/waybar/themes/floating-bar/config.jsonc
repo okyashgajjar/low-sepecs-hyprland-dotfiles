@@ -82,7 +82,7 @@
 
     "custom/power": {
         "format": "⏻",
-        "on-click": "rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu -theme ~/.config/rofi/power-menu.rasi",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh",
         "tooltip": false
     }
 }

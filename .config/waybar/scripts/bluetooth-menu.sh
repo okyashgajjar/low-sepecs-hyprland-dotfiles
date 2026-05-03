@@ -6,6 +6,13 @@
 THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
+# Handle positioning
+POSITION="$1"
+ROFI_ARGS=""
+if [[ "$POSITION" == "left" ]]; then
+    ROFI_ARGS="-location 7 -xoffset 60 -yoffset -20"
+fi
+
 notify() {
     notify-send -a "Bluetooth" -i bluetooth "$1" "$2" -t 4000
 }
@@ -181,7 +188,7 @@ handle_selection() {
                     "󰅙  Disconnect" \
                     "󰆴  Remove (unpair)" \
                     "⬅  Back" \
-                    | rofi -dmenu -p "  $name" -theme "$THEME" -i)
+                    | rofi -dmenu $ROFI_ARGS -p "  $name" -theme "$THEME" -i)
 
                 case "$action" in
                     "󰅙  Disconnect")
@@ -200,7 +207,7 @@ handle_selection() {
                     "󰂱  Connect" \
                     "󰆴  Remove (unpair)" \
                     "⬅  Back" \
-                    | rofi -dmenu -p "  $name" -theme "$THEME" -i)
+                    | rofi -dmenu $ROFI_ARGS -p "  $name" -theme "$THEME" -i)
 
                 case "$action" in
                     "󰂱  Connect")
@@ -256,7 +263,7 @@ main() {
     menu=$(build_menu)
 
     local choice
-    choice=$(echo "$menu" | rofi -dmenu -p "󰂯  Bluetooth" -theme "$THEME" -i)
+    choice=$(echo "$menu" | rofi -dmenu $ROFI_ARGS -p "󰂯  Bluetooth" -theme "$THEME" -i)
 
     [[ -z "$choice" ]] && exit 0
 

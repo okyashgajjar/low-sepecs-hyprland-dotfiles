@@ -6,6 +6,13 @@
 THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
+# Handle positioning
+POSITION="$1"
+ROFI_ARGS=""
+if [[ "$POSITION" == "left" ]]; then
+    ROFI_ARGS="-location 7 -xoffset 60 -yoffset -20"
+fi
+
 # ── Build menu ───────────────────────────────
 build_menu() {
     echo "󰌾  Lock"
@@ -20,7 +27,7 @@ confirm_action() {
     local action="$1"
     local choice
     choice=$(printf "  Yes, %s\n󰅙  Cancel" "$action" \
-        | rofi -dmenu -p "  Confirm?" -theme "$THEME" -i)
+        | rofi -dmenu $ROFI_ARGS -p "  Confirm?" -theme "$THEME" -i)
 
     [[ "$choice" == *"Yes"* ]] && return 0 || return 1
 }
@@ -61,7 +68,7 @@ main() {
     menu=$(build_menu)
 
     local choice
-    choice=$(echo "$menu" | rofi -dmenu -p "  Controls" -theme "$THEME" -i)
+    choice=$(echo "$menu" | rofi -dmenu $ROFI_ARGS -p "  Controls" -theme "$THEME" -i)
 
     [[ -z "$choice" ]] && exit 0
 

@@ -6,6 +6,13 @@
 THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
+# Handle positioning
+POSITION="$1"
+ROFI_ARGS=""
+if [[ "$POSITION" == "left" ]]; then
+    ROFI_ARGS="-location 7 -xoffset 60 -yoffset -20"
+fi
+
 notify() {
     notify-send -a "WiFi Menu" -i network-wireless "$1" "$2" -t 4000
 }
@@ -134,7 +141,7 @@ handle_selection() {
 
                 if [[ -n "$security" && "$security" != "--" ]]; then
                     local pass
-                    pass=$(rofi -dmenu -p "󰌾  Password" \
+                    pass=$(rofi -dmenu $ROFI_ARGS -p "󰌾  Password" \
                         -theme "$THEME" \
                         -mesg "Enter password for <b>$ssid</b>" \
                         -password)
@@ -174,7 +181,7 @@ show_saved() {
     done < <(nmcli -t -f NAME,TYPE con show | grep ':.*wireless' | cut -d: -f1)
 
     local choice
-    choice=$(echo -e "$saved_menu" | rofi -dmenu -p "󱛅  Saved" -theme "$THEME" -i)
+    choice=$(echo -e "$saved_menu" | rofi -dmenu $ROFI_ARGS -p "󱛅  Saved" -theme "$THEME" -i)
 
     [[ -z "$choice" ]] && return
 
@@ -189,7 +196,7 @@ show_saved() {
             local ssid="${choice#󰤨  }"
             local action
             action=$(echo -e "󰤨  Connect\n󰅙  Forget" \
-                | rofi -dmenu -p "  $ssid" -theme "$THEME")
+                | rofi -dmenu $ROFI_ARGS -p "  $ssid" -theme "$THEME")
 
             case "$action" in
                 "󰤨  Connect")
@@ -214,7 +221,7 @@ main() {
     menu=$(build_menu)
 
     local choice
-    choice=$(echo "$menu" | rofi -dmenu -p "󰖩  WiFi" -theme "$THEME" -i)
+    choice=$(echo "$menu" | rofi -dmenu $ROFI_ARGS -p "󰖩  WiFi" -theme "$THEME" -i)
 
     [[ -z "$choice" ]] && exit 0
 
