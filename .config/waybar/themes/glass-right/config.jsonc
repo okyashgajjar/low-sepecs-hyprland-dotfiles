@@ -1,4 +1,7 @@
 {
+    "include": [
+        "/home/riceyg/.config/waybar/modules.jsonc"
+    ],
     "layer": "top",
     "position": "right",
     "width": 60,
