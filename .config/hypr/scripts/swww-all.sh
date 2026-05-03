@@ -36,5 +36,8 @@ hyprctl reload
 # SIGUSR1 tells nvim to reload colors
 killall -SIGUSR1 nvim 2>/dev/null
 
-# 7. Notify
+# 7. Regenerate Brave theme
+~/.config/hypr/scripts/brave-theme.sh
+
+# 8. Notify
 notify-send "Theme Updated" "Colors extracted from $(basename "$WALLPAPER")" -i "$WALLPAPER"
