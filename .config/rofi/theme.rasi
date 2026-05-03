@@ -21,7 +21,7 @@ window {
     background-color: @bg;
     border:           2px;
     border-color:     @accent;
-    border-radius:    12px;
+    border-radius:    20px;
     padding:          0;
     location:         center;
     anchor:           center;
@@ -29,7 +29,7 @@ window {
 
 mainbox {
     background-color: @bg;
-    border-radius:    12px;
+    border-radius:    20px;
     children:         [ inputbar, listview ];
     spacing:          0;
     padding:          0;
