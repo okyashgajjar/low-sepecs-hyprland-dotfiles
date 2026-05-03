@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────
- *   Rofi WiFi Menu Theme – Catppuccin Mocha
+ *   Rofi Material You Theme – Dynamic
  * ────────────────────────────────────────────── */
 
 @import "~/.config/rofi/colors.rasi"
@@ -9,32 +9,28 @@
     bg-alt:   @background-alt;
     bg-sel:   @active;
     fg:       @foreground;
-    fg-alt:   @foreground;
     accent:   @selected;
-    green:    @active;
-    red:      @urgent;
-    yellow:   @selected;
 
     background-color: transparent;
     text-color:       @fg;
 }
 
 window {
-    width:            420px;
+    width:            400px;
     background-color: @bg;
     border:           2px solid;
     border-color:     @accent;
-    border-radius:    12px;
+    border-radius:    24px;
     padding:          0;
     location:         north east;
     anchor:           north east;
-    x-offset:         -80;
-    y-offset:         48;
+    x-offset:         -20;
+    y-offset:         60;
 }
 
 mainbox {
     background-color: @bg;
-    border-radius:    12px;
+    border-radius:    24px;
     children:         [ inputbar, message, listview ];
     spacing:          0;
     padding:          0;
@@ -42,44 +38,46 @@ mainbox {
 
 inputbar {
     background-color: @bg-alt;
-    border-radius:    12px 12px 0 0;
-    padding:          12px 16px;
+    border-radius:    24px 24px 0 0;
+    padding:          15px 20px;
     spacing:          10px;
     children:         [ prompt, entry ];
 }
 
 prompt {
-    background-color: transparent;
-    text-color:       @accent;
-    font:             "NotoSansMono Nerd Font Bold 12";
+    background-color: @accent;
+    text-color:       @bg;
+    padding:          4px 12px;
+    border-radius:    12px;
+    font:             "JetBrainsMono Nerd Font Bold 11";
 }
 
 entry {
     background-color: transparent;
     text-color:       @fg;
-    placeholder:      "Search networks…";
+    placeholder:      "Search…";
     placeholder-color: #585b70;
+    vertical-align:   0.5;
 }
 
 message {
     background-color: @bg-alt;
-    padding:          6px 16px;
-    border-color:     @bg-sel;
+    padding:          8px 20px;
+    border-color:     @accent;
 }
 
 textbox {
-    background-color: transparent;
-    text-color:       @fg-alt;
-    font:             "NotoSansMono Nerd Font 10";
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font Italic 10";
 }
 
 listview {
     background-color: @bg;
-    border-radius:    0 0 12px 12px;
+    border-radius:    0 0 24px 24px;
     columns:          1;
     lines:            10;
-    spacing:          0;
-    padding:          6px 0;
+    spacing:          2px;
+    padding:          10px;
     scrollbar:        false;
     fixed-height:     false;
     dynamic:          true;
@@ -88,9 +86,9 @@ listview {
 element {
     background-color: transparent;
     text-color:       @fg;
-    padding:          10px 16px;
+    padding:          12px 15px;
     spacing:          12px;
-    border-radius:    0;
+    border-radius:    15px;
 }
 
 element selected.normal {
@@ -98,8 +96,10 @@ element selected.normal {
     text-color:       @bg;
 }
 
+element-icon {
+    size:             24px;
+}
+
 element-text {
-    background-color: transparent;
-    text-color:       inherit;
     vertical-align:   0.5;
 }
