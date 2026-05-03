@@ -1,0 +1,84 @@
+/* ── Modern App Launcher ── */
+@import "../../colors.rasi"
+
+* {
+    bg:       @background;
+    bg-alt:   @background-alt;
+    fg:       @foreground;
+    accent:   @selected;
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            520px;
+    background-color: @bg;
+    border:           1px solid;
+    border-color:     @accent;
+    border-radius:    20px;
+    location:         center;
+}
+
+mainbox {
+    background-color: @bg;
+    border-radius:    20px;
+    children:         [ inputbar, listview ];
+    spacing:          0;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius:    20px 20px 0 0;
+    padding:          14px 20px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: @accent;
+    text-color:       @bg;
+    padding:          5px 14px;
+    border-radius:    10px;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg;
+    placeholder:      "Search…";
+    placeholder-color: #585b70;
+    vertical-align:   0.5;
+}
+
+listview {
+    background-color: @bg;
+    border-radius:    0 0 20px 20px;
+    columns:          1;
+    lines:            7;
+    spacing:          3px;
+    padding:          10px;
+    scrollbar:        false;
+    fixed-height:     false;
+    dynamic:          true;
+}
+
+element {
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          11px 16px;
+    spacing:          12px;
+    border-radius:    12px;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-icon {
+    size:             26px;
+}
+
+element-text {
+    vertical-align:   0.5;
+}

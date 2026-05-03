@@ -6,33 +6,81 @@
     font-family: "JetBrainsMono Nerd Font";
     font-size: 14px;
     font-weight: 900;
+    min-height: 0;
 }
 
 window#waybar {
     background: @surface;
     color: @on_surface;
-    border: 3px solid @primary;
+    border-right: 3px solid @primary;
 }
 
+/* ── Launcher (retro arrow) ── */
+#custom-launcher {
+    font-size: 16px;
+    color: @on_primary;
+    background: @primary;
+    padding: 12px 0;
+}
+
+/* ── Workspaces (blocky indicators) ── */
 #workspaces button {
     padding: 10px 0;
-    border-bottom: 2px solid alpha(@outline, 0.2);
+    border-bottom: 2px solid alpha(@outline, 0.15);
+    color: alpha(@on_surface, 0.4);
+    font-weight: 900;
+    transition: none;
 }
 
 #workspaces button.active {
     background: @primary;
     color: @on_primary;
+    border-bottom: 2px solid @primary;
 }
 
+/* ── Clock (vertical, bold) ── */
 #clock {
-    background: @secondary;
-    color: @on_secondary;
+    background: @secondary_container;
+    color: @on_secondary_container;
     border-top: 3px solid @primary;
     border-bottom: 3px solid @primary;
     padding: 10px 0;
+    font-size: 18px;
+    font-weight: 900;
 }
 
+/* ── System modules ── */
+#pulseaudio, #network, #battery {
+    padding: 10px 0;
+    border-bottom: 1px solid alpha(@outline, 0.15);
+}
+
+#pulseaudio {
+    color: @tertiary;
+}
+
+#network {
+    color: @primary;
+}
+
+#battery {
+    color: @secondary;
+}
+
+#battery.warning {
+    color: #f9a825;
+    background: alpha(#f9a825, 0.1);
+}
+
+#battery.critical {
+    color: @on_error;
+    background: @error;
+}
+
+/* ── Power (solid block) ── */
 #custom-power {
     background: @error;
     color: @on_error;
+    padding: 10px 0;
+    font-size: 14px;
 }

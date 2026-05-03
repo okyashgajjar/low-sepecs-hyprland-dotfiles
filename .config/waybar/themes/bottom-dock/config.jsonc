@@ -8,12 +8,13 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 50,
-    "margin-bottom": 10,
-    "margin-left": 100,
-    "margin-right": 100,
+    "height": 44,
+    "margin-bottom": 8,
+    "margin-left": 200,
+    "margin-right": 200,
     
     "modules-left": [
+        "custom/launcher",
         "hyprland/workspaces"
     ],
     
@@ -29,12 +30,23 @@
         "custom/power"
     ],
 
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/themes/modern/launcher.rasi",
+        "tooltip": false
+    },
+
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate"
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
 
     "clock": {
-        "format": "{:%H:%M}"
+        "format": "{:%H:%M · %a %d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     }
 }

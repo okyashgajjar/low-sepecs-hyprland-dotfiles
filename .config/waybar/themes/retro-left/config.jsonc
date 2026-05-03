@@ -1,10 +1,13 @@
 {
+    "include": [
+        "/home/riceyg/.config/waybar/modules.jsonc"
+    ],
     "layer": "top",
     "position": "left",
-    "width": 40,
-    "margin-top": 10,
-    "margin-bottom": 10,
-    "margin-left": 5,
+    "width": 42,
+    "margin-top": 8,
+    "margin-bottom": 8,
+    "margin-left": 4,
     "spacing": 0,
     "gtk-layer-shell": true,
 
@@ -25,8 +28,8 @@
     ],
 
     "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "rofi -show drun -theme ~/.config/rofi/theme.rasi",
+        "format": "▶",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/themes/retro/launcher.rasi",
         "tooltip": false
     },
 
@@ -39,47 +42,6 @@
 
     "clock": {
         "format": "{:%H\n%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month"
-        }
-    },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "󰖁",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "network": {
-        "interval": 10,
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤭",
-        "on-click": "~/.config/waybar/scripts/wifi-menu.sh left"
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "adapter": "ADP0",
-        "interval": 60,
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "󰂄",
-        "format-plugged": "󰂄",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "~/.config/waybar/scripts/power-menu.sh left",
-        "tooltip": false
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     }
 }

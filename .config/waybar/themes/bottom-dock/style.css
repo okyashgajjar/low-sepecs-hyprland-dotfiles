@@ -3,51 +3,105 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 600;
+    min-height: 0;
 }
 
 window#waybar {
-    background: alpha(@surface, 0.4);
+    background: alpha(@surface, 0.9);
     color: @on_surface;
+    border-radius: 18px;
+    border: 1px solid alpha(@outline, 0.12);
 }
 
+/* ── Launcher ── */
+#custom-launcher {
+    font-size: 18px;
+    color: @primary;
+    padding: 0 14px 0 16px;
+    margin: 5px 4px;
+    border-radius: 14px;
+    background: alpha(@primary_container, 0.3);
+    transition: all 200ms ease;
+}
+
+#custom-launcher:hover {
+    background: alpha(@primary_container, 0.5);
+}
+
+/* ── Workspaces (pill buttons) ── */
 #workspaces {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px;
-    border-radius: 12px;
-    padding: 0 4px;
+    margin: 5px 4px;
+    padding: 0 6px;
+    border-radius: 14px;
+    background: alpha(@surface_variant, 0.25);
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: alpha(@on_surface, 0.3);
+    padding: 0 10px;
+    color: alpha(@on_surface, 0.5);
+    border-radius: 12px;
+    margin: 3px 2px;
+    transition: all 200ms ease;
 }
 
-#workspaces button.active {
+#workspaces button:hover {
+    background: alpha(@primary, 0.1);
     color: @primary;
 }
 
+#workspaces button.active {
+    background: @primary_container;
+    color: @on_primary_container;
+}
+
+/* ── Clock ── */
 #clock {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px;
-    border-radius: 12px;
-    padding: 0 12px;
+    padding: 0 18px;
+    color: @on_surface;
+    font-weight: 600;
 }
 
-#pulseaudio, #network, #battery, #tray, #custom-power {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px 2px;
-    border-radius: 12px;
-    padding: 0 10px;
-}
-
+/* ── System modules (hover-glow style) ── */
 #tray {
+    margin: 5px 2px;
     padding: 0 8px;
 }
 
-#custom-power {
-    margin-right: 4px;
+#pulseaudio, #network, #battery {
+    padding: 0 10px;
+    margin: 5px 2px;
+    border-radius: 12px;
+    transition: all 200ms ease;
+}
+
+#pulseaudio:hover, #network:hover, #battery:hover {
+    background: alpha(@primary, 0.15);
+}
+
+#pulseaudio { color: @tertiary; }
+#network    { color: @primary; }
+#battery    { color: @secondary; }
+
+#battery.warning { color: #f9a825; }
+#battery.critical {
     color: @error;
+    
+}
+
+
+/* ── Power ── */
+#custom-power {
+    font-size: 14px;
+    color: @error;
+    padding: 0 12px;
+    margin: 5px 6px 5px 2px;
+    border-radius: 12px;
+    transition: all 200ms ease;
+}
+
+#custom-power:hover {
+    background: alpha(@error, 0.15);
 }

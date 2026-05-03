@@ -1,11 +1,105 @@
 @import "colors.css";
-window#waybar {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
 }
-#workspaces, #clock, #pulseaudio, #network, #battery, #tray, #custom-power {
-    background: rgba(255, 255, 255, 0.1);
-    margin: 5px;
-    border-radius: 20px;
+
+window#waybar {
+    background: alpha(@surface, 0.35);
+    color: @on_surface;
+    border-radius: 24px;
+    border: 1px solid alpha(@primary, 0.15);
+}
+
+/* ── Launcher (diamond) ── */
+#custom-launcher {
+    font-size: 18px;
+    color: @primary;
+    padding: 14px 0;
+    transition: all 200ms ease;
+}
+
+#custom-launcher:hover {
+    color: @tertiary;
+}
+
+/* ── Clock ── */
+#clock {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0;
+    color: @on_surface;
+    border-bottom: 1px solid alpha(@outline, 0.1);
+}
+
+/* ── Workspaces (floating circles) ── */
+#workspaces {
+    margin: 4px 8px;
+    padding: 4px 0;
+}
+
+#workspaces button {
+    padding: 6px 0;
+    font-size: 10px;
+    color: alpha(@on_surface, 0.3);
+    border-radius: 50%;
+    min-width: 28px;
+    min-height: 28px;
+    transition: all 200ms ease;
+}
+
+#workspaces button:hover {
+    color: @primary;
+    background: alpha(@primary, 0.1);
+}
+
+#workspaces button.active {
+    color: @primary;
+    font-size: 12px;
+    background: alpha(@primary, 0.12);
+    border-radius: 50%;
+}
+
+/* ── System modules (translucent pills) ── */
+#pulseaudio, #network, #battery {
+    padding: 8px 0;
+    transition: all 200ms ease;
+}
+
+#pulseaudio:hover, #network:hover, #battery:hover {
+    background: alpha(@primary, 0.1);
+}
+
+#pulseaudio { color: @tertiary; }
+#network    { color: @primary; }
+#battery    { color: @secondary; }
+
+#battery.warning { color: #f9a825; }
+#battery.critical {
+    color: @error;
+    
+}
+
+
+#tray {
+    padding: 6px 0;
+    border-top: 1px solid alpha(@outline, 0.1);
+}
+
+/* ── Power ── */
+#custom-power {
+    color: @error;
+    padding: 10px 0;
+    font-size: 14px;
+    border-top: 1px solid alpha(@outline, 0.1);
+    transition: all 200ms ease;
+}
+
+#custom-power:hover {
+    background: alpha(@error, 0.15);
 }

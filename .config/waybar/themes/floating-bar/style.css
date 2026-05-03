@@ -3,51 +3,129 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "Product Sans", sans-serif;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 500;
+    min-height: 0;
 }
 
 window#waybar {
-    background: alpha(@surface, 0.4);
+    background: alpha(@surface, 0.85);
     color: @on_surface;
+    border-radius: 14px;
+    border: 1px solid alpha(@outline, 0.15);
 }
 
-#workspaces {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px;
+/* ── Launcher (Pixel "G" button) ── */
+#custom-launcher {
+    font-size: 18px;
+    color: @primary;
+    padding: 0 12px 0 14px;
+    margin: 4px 2px 4px 4px;
     border-radius: 12px;
+    background: alpha(@primary_container, 0.35);
+    transition: all 200ms ease;
+}
+
+#custom-launcher:hover {
+    background: alpha(@primary_container, 0.6);
+}
+
+/* ── Workspaces (Pixel dot indicators) ── */
+#workspaces {
+    margin: 4px 4px;
     padding: 0 4px;
+    border-radius: 12px;
+    background: alpha(@surface_variant, 0.25);
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: alpha(@on_surface, 0.3);
+    padding: 0 6px;
+    color: alpha(@on_surface_variant, 0.35);
+    font-size: 8px;
+    border-radius: 50%;
+    min-width: 20px;
+    transition: all 200ms ease;
+}
+
+#workspaces button:hover {
+    color: @primary;
+    background: alpha(@primary, 0.1);
 }
 
 #workspaces button.active {
     color: @primary;
+    font-size: 10px;
 }
 
+/* ── Clock (center, clean) ── */
 #clock {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px;
-    border-radius: 12px;
-    padding: 0 12px;
+    padding: 0 16px;
+    color: @on_surface;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-#pulseaudio, #network, #battery, #tray, #custom-power {
-    background: alpha(@surface_variant, 0.5);
-    margin: 4px 2px;
-    border-radius: 12px;
-    padding: 0 10px;
+/* ── Separators ── */
+#custom-separator, #custom-separator2 {
+    color: alpha(@outline, 0.2);
+    padding: 0 2px;
+    font-size: 14px;
 }
 
+/* ── System tray & modules (Pixel Quick Settings style) ── */
 #tray {
+    margin: 4px 0;
     padding: 0 8px;
 }
 
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#pulseaudio, #network, #battery {
+    padding: 0 8px;
+    margin: 4px 1px;
+    border-radius: 10px;
+    transition: all 200ms ease;
+}
+
+#pulseaudio:hover, #network:hover, #battery:hover {
+    background: alpha(@primary, 0.12);
+}
+
+#pulseaudio {
+    color: @tertiary;
+}
+
+#network {
+    color: @primary;
+}
+
+#battery {
+    color: @secondary;
+}
+
+#battery.warning {
+    color: #f9a825;
+}
+
+#battery.critical {
+    color: @on_error;
+    background: alpha(@error, 0.3);
+}
+
+/* ── Power Button (Pixel red accent) ── */
 #custom-power {
-    margin-right: 4px;
-    color: @error;
+    font-size: 14px;
+    color: @on_error;
+    background: alpha(@error, 0.8);
+    padding: 0 10px;
+    margin: 5px 5px 5px 2px;
+    border-radius: 10px;
+    transition: all 200ms ease;
+}
+
+#custom-power:hover {
+    background: @error;
 }

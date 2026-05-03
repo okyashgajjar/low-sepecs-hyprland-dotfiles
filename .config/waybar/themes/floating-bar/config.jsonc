@@ -8,12 +8,13 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 40,
-    "margin-top": 10,
-    "margin-left": 20,
-    "margin-right": 20,
+    "height": 36,
+    "margin-top": 6,
+    "margin-left": 8,
+    "margin-right": 8,
     
     "modules-left": [
+        "custom/launcher",
         "hyprland/workspaces"
     ],
     
@@ -23,26 +24,48 @@
     
     "modules-right": [
         "tray",
+        "custom/separator",
         "pulseaudio",
         "network",
         "battery",
+        "custom/separator2",
         "custom/power"
     ],
 
+    "custom/launcher": {
+        "format": "󰊠",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/themes/material/launcher.rasi",
+        "tooltip": false
+    },
+
+    "custom/separator": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    "custom/separator2": {
+        "format": "│",
+        "tooltip": false
+    },
+
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "●",
+            "2": "●",
+            "3": "●",
+            "4": "●",
+            "5": "●",
+            "active": "◉",
+            "default": "○"
+        },
         "on-click": "activate",
-        "all-outputs": true,
-        "persistent-workspaces": {
-            "*": 5
-        }
+        "all-outputs": true
     },
 
     "clock": {
-        "format": "{:%H:%M  |  %A, %d %b}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month"
-        }
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a, %b %d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     }
 }

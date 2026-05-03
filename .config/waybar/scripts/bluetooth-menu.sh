@@ -3,7 +3,10 @@
 #   Bluetooth Menu for Waybar (rofi + bluetoothctl)
 # ──────────────────────────────────────────────
 
-THEME="$HOME/.config/rofi/material-scripts.rasi"
+# Use active theme script style
+THEME="$HOME/.config/rofi/active-scripts.rasi"
+# Fallback if symlink missing
+[ ! -f "$THEME" ] && THEME="$HOME/.config/rofi/material-scripts.rasi"
 DIVIDER="────────────────────────────"
 
 # Handle positioning

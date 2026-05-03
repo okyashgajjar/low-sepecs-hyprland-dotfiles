@@ -1,0 +1,96 @@
+/* ── Glass Script Theme ── */
+@import "../../colors.rasi"
+
+* {
+    bg:       @background;
+    bg-alt:   @background-alt;
+    fg:       @foreground;
+    accent:   @selected;
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            400px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border:           1px solid;
+    border-color:     rgba(255, 255, 255, 0.08);
+    border-radius:    28px;
+    location:         north east;
+    anchor:           north east;
+    x-offset:         -66;
+    y-offset:         20;
+}
+
+mainbox {
+    border-radius:    28px;
+    children:         [ inputbar, message, listview ];
+    spacing:          0;
+}
+
+inputbar {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius:    28px 28px 0 0;
+    padding:          14px 22px;
+    spacing:          12px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: @accent;
+    text-color:       @bg;
+    padding:          5px 16px;
+    border-radius:    14px;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg;
+    placeholder:      "Search…";
+    placeholder-color: rgba(255,255,255,0.25);
+    vertical-align:   0.5;
+}
+
+message {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding:          6px 22px;
+}
+
+textbox {
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font Italic 10";
+}
+
+listview {
+    background-color: transparent;
+    border-radius:    0 0 28px 28px;
+    columns:          1;
+    lines:            10;
+    spacing:          3px;
+    padding:          10px;
+    scrollbar:        false;
+    fixed-height:     false;
+    dynamic:          true;
+}
+
+element {
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          12px 18px;
+    spacing:          12px;
+    border-radius:    16px;
+}
+
+element selected.normal {
+    background-color: rgba(255, 255, 255, 0.12);
+    text-color:       @fg;
+}
+
+element-icon {
+    size:             22px;
+}
+
+element-text {
+    vertical-align:   0.5;
+}

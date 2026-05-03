@@ -1,0 +1,96 @@
+/* ── Retro Script Theme (WiFi/BT/Power/Sound) ── */
+@import "../../colors.rasi"
+
+* {
+    bg:       @background;
+    bg-alt:   @background-alt;
+    fg:       @foreground;
+    accent:   @selected;
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            360px;
+    background-color: @bg;
+    border:           3px solid;
+    border-color:     @accent;
+    border-radius:    0;
+    location:         south west;
+    anchor:           south west;
+    x-offset:         52;
+    y-offset:         -12;
+}
+
+mainbox {
+    background-color: @bg;
+    children:         [ inputbar, message, listview ];
+    spacing:          0;
+}
+
+inputbar {
+    background-color: @accent;
+    padding:          10px 16px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: @bg;
+    text-color:       @accent;
+    padding:          3px 12px;
+    border-radius:    0;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @bg;
+    placeholder:      ">";
+    placeholder-color: rgba(0,0,0,0.4);
+    vertical-align:   0.5;
+}
+
+message {
+    background-color: @bg-alt;
+    padding:          6px 16px;
+}
+
+textbox {
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font 10";
+}
+
+listview {
+    background-color: @bg;
+    columns:          1;
+    lines:            10;
+    spacing:          0;
+    padding:          4px;
+    scrollbar:        false;
+    fixed-height:     false;
+    dynamic:          true;
+}
+
+element {
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          10px 14px;
+    spacing:          10px;
+    border-radius:    0;
+    border-bottom:    1px solid;
+    border-color:     rgba(255,255,255,0.04);
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-icon {
+    size:             20px;
+}
+
+element-text {
+    vertical-align:   0.5;
+}
