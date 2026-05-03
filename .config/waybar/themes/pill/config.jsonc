@@ -106,7 +106,7 @@
 
     // ── Network ─────────────────────────────
     "network": {
-        "interval": 5,
+        "interval": 10,
         "format-wifi": "󰤨  {essid}",
         "format-ethernet": "󰈀  {ifname}",
         "format-disconnected": "󰤭  offline",
@@ -121,7 +121,7 @@
     "battery": {
         "bat": "BAT0",
         "adapter": "ADP0",
-        "interval": 30,
+        "interval": 60,
         "states": {
             "good": 80,
             "warning": 30,

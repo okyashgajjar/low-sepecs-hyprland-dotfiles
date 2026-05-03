@@ -55,7 +55,7 @@
     },
 
     "network": {
-        "interval": 5,
+        "interval": 10,
         "format-wifi": "󰤨",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰤭",
@@ -65,7 +65,7 @@
     "battery": {
         "bat": "BAT0",
         "adapter": "ADP0",
-        "interval": 30,
+        "interval": 60,
         "states": {
             "good": 80,
             "warning": 30,
