@@ -34,7 +34,7 @@ fi
 BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 
-CONFIGS=("hypr" "waybar" "kitty" "rofi" "dunst" "matugen")
+CONFIGS=("hypr" "waybar" "kitty" "rofi" "dunst" "matugen" "gtk-3.0" "gtk-4.0")
 
 for config in "${CONFIGS[@]}"; do
     if [ -d "$HOME/.config/$config" ]; then
@@ -66,6 +66,11 @@ if [ -f "$HOME/.zshrc" ]; then
     mv "$HOME/.zshrc" "$BACKUP_DIR/"
 fi
 cp ".zshrc" "$HOME/.zshrc"
+
+# Install GTK Themes
+echo "Installing GTK themes..."
+mkdir -p "$HOME/.themes"
+cp -rn .themes/* "$HOME/.themes/" 2>/dev/null || true
 
 echo "Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C)."
 echo "Your old configs are saved in: $BACKUP_DIR"
