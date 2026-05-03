@@ -36,8 +36,9 @@ hyprctl reload
 # SIGUSR1 tells nvim to reload colors
 killall -SIGUSR1 nvim 2>/dev/null
 
-# 7. Regenerate Brave theme
-~/.config/hypr/scripts/brave-theme.sh
+# 7. Update Firefox colors (Pywalfox)
+# This will update Firefox instantly if the addon is installed
+pywalfox update 2>/dev/null
 
 # 8. Notify
 notify-send "Theme Updated" "Colors extracted from $(basename "$WALLPAPER")" -i "$WALLPAPER"
