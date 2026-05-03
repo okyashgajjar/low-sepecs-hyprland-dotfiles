@@ -1,0 +1,31 @@
+{
+    "layer": "top",
+    "position": "right",
+    "width": 60,
+    "margin-top": 20,
+    "margin-bottom": 20,
+    "margin-right": 10,
+    
+    "modules-left": [
+        "clock"
+    ],
+    
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "orientation": "vertical"
+    },
+
+    "clock": {
+        "format": "{:%H\n%M}"
+    }
+}

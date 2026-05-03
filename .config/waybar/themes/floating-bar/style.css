@@ -1,30 +1,27 @@
-@import "colors.css";
+@import "../../colors.css";
 
 * {
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
-    min-height: 0;
 }
 
 window#waybar {
-    background: alpha(@surface, 0.7);
+    background: alpha(@surface, 0.4);
     color: @on_surface;
-    border-radius: 20px;
-    border: 1px solid alpha(@outline, 0.2);
 }
 
 #workspaces {
     background: alpha(@surface_variant, 0.5);
-    margin: 5px;
-    border-radius: 15px;
-    padding: 0 5px;
+    margin: 4px;
+    border-radius: 12px;
+    padding: 0 4px;
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 8px;
     color: alpha(@on_surface, 0.3);
 }
 
@@ -34,23 +31,23 @@ window#waybar {
 
 #clock {
     background: alpha(@surface_variant, 0.5);
-    margin: 5px;
-    border-radius: 15px;
-    padding: 0 15px;
+    margin: 4px;
+    border-radius: 12px;
+    padding: 0 12px;
 }
 
 #pulseaudio, #network, #battery, #tray, #custom-power {
     background: alpha(@surface_variant, 0.5);
-    margin: 5px 2px;
-    border-radius: 15px;
-    padding: 0 12px;
-}
-
-#custom-power {
-    margin-right: 5px;
-    color: @error;
+    margin: 4px 2px;
+    border-radius: 12px;
+    padding: 0 10px;
 }
 
 #tray {
-    padding: 0 10px;
+    padding: 0 8px;
+}
+
+#custom-power {
+    margin-right: 4px;
+    color: @error;
 }

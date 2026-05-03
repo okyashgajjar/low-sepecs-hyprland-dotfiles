@@ -1,0 +1,18 @@
+@import "../colors.rasi"
+* {
+    background-color: transparent;
+    text-color: @fg;
+}
+window {
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+}
+element {
+    padding: 15px;
+    border-radius: 20px;
+}
+element selected {
+    background-color: rgba(255, 255, 255, 0.1);
+}

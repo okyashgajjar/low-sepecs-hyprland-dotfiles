@@ -1,0 +1,62 @@
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 900px;
+    height: 600px;
+    background-color: @bg;
+    border-radius: 32px;
+    border: 2px solid @accent;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 20px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 20px;
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: @accent;
+    text-color: @bg;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+listview {
+    columns: 3;
+    lines: 4;
+    spacing: 15px;
+    fixed-columns: true;
+}
+
+element {
+    background-color: @bg-alt;
+    padding: 30px;
+    border-radius: 24px;
+    orientation: vertical;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+}

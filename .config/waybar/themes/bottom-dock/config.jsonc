@@ -1,112 +1,37 @@
 {
     "layer": "top",
     "position": "bottom",
-    "mode": "dock",
+    "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 48,
-    "margin-top": 0,
+    "height": 50,
     "margin-bottom": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-left": 100,
+    "margin-right": 100,
     
     "modules-left": [
-        "custom/updates",
-        "custom/power",
-        "clock"
+        "hyprland/workspaces"
     ],
     
     "modules-center": [
-        "custom/launcher",
-        "hyprland/workspaces"
+        "clock"
     ],
     
     "modules-right": [
         "tray",
         "pulseaudio",
         "network",
-        "battery"
+        "battery",
+        "custom/power"
     ],
-
-    // ── Modules ─────────────────────────────────
-
-    "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "rofi -show drun -theme ~/.config/rofi/theme.rasi",
-        "tooltip": false
-    },
 
     "hyprland/workspaces": {
         "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 4
-        }
+        "on-click": "activate"
     },
 
     "clock": {
-        "format": "<b>{:%H:%M}</b>\n<span size='10pt'>{:%d/%m}</span>",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month"
-        }
-    },
-
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "󰖁  Muted",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "network": {
-        "interval": 10,
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤭",
-        "on-click": "~/.config/waybar/scripts/wifi-menu.sh"
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "adapter": "ADP0",
-        "interval": 60,
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "󰂄",
-        "format-plugged": "󰂄",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing": 8
-    },
-
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "~/.config/waybar/scripts/power-menu.sh",
-        "tooltip": false
-    },
-
-    "custom/updates": {
-    "format": "\udb81\udeb0  {}",
-    "escape": true,
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/updates.sh",
-    "interval": 3600,
-    "on-click": "kitty -e yay -Syu; pkill -RTMIN+8 waybar",
-    "signal": 8
-},
+        "format": "{:%H:%M}"
+    }
 }
