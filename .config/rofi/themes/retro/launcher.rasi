@@ -1,5 +1,5 @@
 /* ── Retro App Launcher ── */
-@import "../../colors.rasi"
+@import "~/.config/rofi/colors.rasi"
 
 * {
     bg:       @background;

@@ -1,5 +1,5 @@
 /* ── Retro Script Theme (WiFi/BT/Power/Sound) ── */
-@import "../../colors.rasi"
+@import "~/.config/rofi/colors.rasi"
 
 * {
     bg:       @background;

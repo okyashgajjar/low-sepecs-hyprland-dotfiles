@@ -1,5 +1,5 @@
 /* ── Glass Script Theme ── */
-@import "../../colors.rasi"
+@import "~/.config/rofi/colors.rasi"
 
 * {
     bg:       @background;
