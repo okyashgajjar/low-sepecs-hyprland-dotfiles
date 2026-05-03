@@ -1,0 +1,88 @@
+/* Matugen Dynamic GTK3 Colors */
+/* Applied to Thunar, and all GTK3 apps */
+
+@define-color theme_bg_color {{colors.surface.default.hex}};
+@define-color theme_fg_color {{colors.on_surface.default.hex}};
+@define-color theme_base_color {{colors.surface.default.hex}};
+@define-color theme_text_color {{colors.on_surface.default.hex}};
+@define-color theme_selected_bg_color {{colors.primary.default.hex}};
+@define-color theme_selected_fg_color {{colors.on_primary.default.hex}};
+@define-color theme_tooltip_bg_color {{colors.surface_container.default.hex}};
+@define-color theme_tooltip_fg_color {{colors.on_surface.default.hex}};
+@define-color theme_unfocused_bg_color {{colors.surface.default.hex}};
+@define-color theme_unfocused_fg_color {{colors.on_surface_variant.default.hex}};
+
+/* Sidebar */
+.sidebar, .sidebar .view, placessidebar, placessidebar .view {
+    background-color: {{colors.surface_container.default.hex}};
+    color: {{colors.on_surface.default.hex}};
+}
+
+.sidebar row:selected, placessidebar row:selected {
+    background-color: {{colors.primary.default.hex}};
+    color: {{colors.on_primary.default.hex}};
+}
+
+/* Main content */
+.view, treeview, iconview {
+    background-color: {{colors.surface.default.hex}};
+    color: {{colors.on_surface.default.hex}};
+}
+
+.view:selected, treeview row:selected, iconview:selected {
+    background-color: {{colors.primary.default.hex}};
+    color: {{colors.on_primary.default.hex}};
+}
+
+/* Toolbar / Headerbar */
+headerbar, .titlebar, toolbar {
+    background-color: {{colors.surface_container.default.hex}};
+    color: {{colors.on_surface.default.hex}};
+}
+
+/* Pathbar / Breadcrumbs */
+.path-bar button, .linked button {
+    color: {{colors.on_surface.default.hex}};
+}
+
+.path-bar button:checked, .linked button:checked {
+    background-color: {{colors.primary_container.default.hex}};
+    color: {{colors.on_primary_container.default.hex}};
+}
+
+/* Scrollbar */
+scrollbar slider {
+    background-color: {{colors.outline.default.hex}};
+    border-radius: 10px;
+}
+
+scrollbar slider:hover {
+    background-color: {{colors.primary.default.hex}};
+}
+
+/* Statusbar */
+statusbar {
+    background-color: {{colors.surface_container.default.hex}};
+    color: {{colors.on_surface_variant.default.hex}};
+}
+
+/* Context Menu */
+menu, popover, .popup {
+    background-color: {{colors.surface_container.default.hex}};
+    color: {{colors.on_surface.default.hex}};
+    border: 1px solid {{colors.outline_variant.default.hex}};
+}
+
+menu menuitem:hover, popover modelbutton:hover {
+    background-color: {{colors.primary.default.hex}};
+    color: {{colors.on_primary.default.hex}};
+}
+
+/* Buttons */
+button {
+    color: {{colors.on_surface.default.hex}};
+}
+
+button:hover {
+    background-color: alpha({{colors.primary.default.hex}}, 0.12);
+}
