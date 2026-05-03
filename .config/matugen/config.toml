@@ -33,3 +33,7 @@ output_path = "~/.config/brave/colors.css"
 [templates.dolphin]
 input_path = "~/.config/matugen/templates/dolphin.colors"
 output_path = "~/.local/share/color-schemes/Matugen.colors"
+
+[templates.nvim]
+input_path = "~/.config/matugen/templates/nvim.lua"
+output_path = "~/.config/nvim/lua/matugen-colors.lua"

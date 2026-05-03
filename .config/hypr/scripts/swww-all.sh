@@ -32,5 +32,9 @@ killall -SIGUSR1 kitty
 # or we can use hyprctl reload
 hyprctl reload
 
-# 6. Notify
+# 6. Reload Neovim
+# SIGUSR1 tells nvim to reload colors
+killall -SIGUSR1 nvim 2>/dev/null
+
+# 7. Notify
 notify-send "Theme Updated" "Colors extracted from $(basename "$WALLPAPER")" -i "$WALLPAPER"
