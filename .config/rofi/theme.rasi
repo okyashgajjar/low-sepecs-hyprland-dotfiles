@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────
- *   Rofi Theme – Clean List (Matugen)
+ *   Rofi Theme – Material You (Dynamic)
  * ────────────────────────────────────────────── */
 
 @import "~/.config/rofi/colors.rasi"
@@ -10,18 +10,17 @@
     bg-sel:   @active;
     fg:       @foreground;
     accent:   @selected;
-    urgent:   @urgent;
 
     background-color: transparent;
     text-color:       @fg;
 }
 
 window {
-    width:            600px;
+    width:            700px;
     background-color: @bg;
-    border:           2px;
+    border:           2px solid;
     border-color:     @accent;
-    border-radius:    20px;
+    border-radius:    24px;
     padding:          0;
     location:         center;
     anchor:           center;
@@ -29,7 +28,7 @@ window {
 
 mainbox {
     background-color: @bg;
-    border-radius:    20px;
+    border-radius:    24px;
     children:         [ inputbar, listview ];
     spacing:          0;
     padding:          0;
@@ -37,34 +36,45 @@ mainbox {
 
 inputbar {
     background-color: @bg-alt;
-    border-radius:    12px 12px 0 0;
-    padding:          15px;
-    spacing:          10px;
+    border-radius:    24px 24px 0 0;
+    padding:          20px 25px;
+    spacing:          15px;
     children:         [ prompt, entry ];
 }
 
 prompt {
-    text-color:       @accent;
+    background-color: @accent;
+    text-color:       @bg;
+    padding:          6px 15px;
+    border-radius:    12px;
     font:             "JetBrainsMono Nerd Font Bold 12";
 }
 
 entry {
+    background-color: transparent;
+    text-color:       @fg;
     placeholder:      "Search Apps…";
     placeholder-color: #585b70;
+    vertical-align:   0.5;
 }
 
 listview {
+    background-color: @bg;
+    border-radius:    0 0 24px 24px;
     columns:          1;
     lines:            8;
-    spacing:          0;
-    padding:          10px 0;
+    spacing:          4px;
+    padding:          15px;
+    scrollbar:        false;
     fixed-height:     true;
 }
 
 element {
-    padding:          10px 15px;
-    spacing:          12px;
-    border-radius:    0;
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          12px 15px;
+    spacing:          15px;
+    border-radius:    15px;
 }
 
 element selected.normal {
