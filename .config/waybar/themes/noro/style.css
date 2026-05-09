@@ -3,6 +3,11 @@
  * ────────────────────────────────────────────── */
 
 @import "colors.css";
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
 
 * {
     font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
@@ -83,6 +88,11 @@ window#waybar {
 }
 #workspaces button:hover {
     color: @secondary;
+}
+
+#battery.charging {
+    color: #a6e3a1; /* Greenish */
+    animation: pulse 1.5s infinite;
 }
 
 #network:hover, #bluetooth:hover, #custom-power:hover {
