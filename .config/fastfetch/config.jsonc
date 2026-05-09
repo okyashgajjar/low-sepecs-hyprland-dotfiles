@@ -56,6 +56,14 @@
       "key": "󰍛 Mem"
     },
     {
+      "type": "zram",
+      "key": "󰍛 Zrm"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 Dsk"
+    },
+    {
       "type": "cpu",
       "key": "󰻠 CPU"
     },
