@@ -13,4 +13,26 @@ configuration {
     font:                "NotoSansMono Nerd Font 12";
 }
 
-@theme "~/.config/rofi/theme.rasi"
+//@theme "~/.config/rofi/theme.rasi"
+
+//@theme "/usr/share/rofi/themes/docu.rasi"
+
+//@theme "/usr/share/rofi/themes/iggy.rasi"
+
+//@theme "/usr/share/rofi/themes/fullscreen-preview.rasi"
+
+//@theme "/usr/share/rofi/themes/Monokai.rasi"
+
+//@theme "/usr/share/rofi/themes/fullscreen-preview.rasi"
+
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+
+//@theme "/usr/share/rofi/themes/dmenu.rasi"
+
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+
+@theme "/usr/share/rofi/themes/fullscreen-preview.rasi"

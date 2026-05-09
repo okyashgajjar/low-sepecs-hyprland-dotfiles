@@ -1,0 +1,100 @@
+/* ── Material You Script Theme (WiFi/BT/Power/Sound) ── */
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    bg:       @background;
+    bg-alt:   @background-alt;
+    fg:       @foreground;
+    accent:   @selected;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            380px;
+    background-color: @bg;
+    border:           2px solid;
+    border-color:     @accent;
+    border-radius:    24px;
+    padding:          0;
+    location:         north east;
+    anchor:           north east;
+    x-offset:         -12;
+    y-offset:         48;
+}
+
+mainbox {
+    background-color: @bg;
+    border-radius:    24px;
+    children:         [ inputbar, message, listview ];
+    spacing:          0;
+    padding:          0;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius:    24px 24px 0 0;
+    padding:          14px 20px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: @accent;
+    text-color:       @bg;
+    padding:          4px 14px;
+    border-radius:    12px;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg;
+    placeholder:      "Search…";
+    placeholder-color: #585b70;
+    vertical-align:   0.5;
+}
+
+message {
+    background-color: @bg-alt;
+    padding:          6px 20px;
+}
+
+textbox {
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font Italic 10";
+}
+
+listview {
+    background-color: @bg;
+    border-radius:    0 0 24px 24px;
+    columns:          1;
+    lines:            10;
+    spacing:          2px;
+    padding:          8px;
+    scrollbar:        false;
+    fixed-height:     false;
+    dynamic:          true;
+}
+
+element {
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          11px 16px;
+    spacing:          12px;
+    border-radius:    14px;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-icon {
+    size:             22px;
+}
+
+element-text {
+    vertical-align:   0.5;
+}

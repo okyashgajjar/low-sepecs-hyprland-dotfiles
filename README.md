@@ -6,10 +6,10 @@ A lightweight, aesthetically pleasing Hyprland configuration optimized for low-e
 ![System Monitor (htop)](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/htop.jpg)
 
 ## 🚀 Highlights
-- **Engineered for Efficiency**: Animations and blur are disabled by default to maintain <10% CPU usage.
 - **Dynamic Theming**: Powered by **Matugen**, colors automatically shift to match your wallpaper.
-- **Included Wallpapers**: A curated set of wallpapers is bundled, so the theme selector (`SUPER + T`) works instantly without manual downloads.
-- **Minimalist Aesthetic**: Clean "Pill" styled Waybar and minimalist Rofi menus.
+- **Theme-Aware Selectors**: Specialized menus to change wallpapers and Waybar styles specifically for your active theme.
+- **Included Wallpapers**: A curated set of wallpapers is bundled, organized by theme for instant use.
+- **Modular Pill Aesthetic**: Introducing the **Noro** theme — a clean, modular pill-styled Waybar with dynamic user branding.
 - **Hardware Verified**: Tested on 2-core processors with 4GB RAM.
 
 ## 🛠️ System Requirements
@@ -106,7 +106,8 @@ If you are on a high-spec system and want to enable blur/animations:
 
 ![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/Gnome-desktop.jpg)
 
-
+### 󰘵 Noro Style
+A modular, pill-based design that groups system info into floating segments. Features a dynamic user-branded box and circular workspace indicators. Completely theme-aware.
 
 ---
 *Developed with love for low-spec warriors.*

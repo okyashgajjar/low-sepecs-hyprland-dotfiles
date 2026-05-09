@@ -1,0 +1,90 @@
+/* ──────────────────────────────────────────────
+ *   Waybar – Noro Theme (Dynamic Colors)
+ * ────────────────────────────────────────────── */
+
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* ── Grouping Strategy ── */
+#clock, #custom-user,
+#workspaces, #backlight, #pulseaudio,
+#battery, #network, #bluetooth, #custom-power {
+    background: @surface; /* DYNAMIC: Based on wallpaper */
+    color: @on_surface;    /* DYNAMIC: Based on wallpaper */
+    padding: 4px 12px;
+    margin: 6px 0;
+}
+
+/* --- Left Group [Clock | User] --- */
+#clock {
+    border-radius: 12px 0 0 12px;
+    margin-left: 10px;
+    padding-right: 15px;
+}
+#custom-user {
+    border-radius: 0 12px 12px 0;
+    margin-right: 30px; 
+    background: @primary; /* DYNAMIC */
+    color: @on_primary;    /* DYNAMIC */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* --- Center Group [Workspaces | Bright | Vol] --- */
+#workspaces {
+    border-radius: 12px 0 0 12px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+#backlight {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#pulseaudio {
+    border-radius: 0 12px 12px 0;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+/* --- Right Group [Bat | Wifi | BT | Power] --- */
+#battery {
+    border-radius: 12px 0 0 12px;
+    margin-left: 30px;
+    padding-left: 15px;
+}
+#network, #bluetooth {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#custom-power {
+    border-radius: 0 12px 12px 0;
+    padding-left: 10px;
+    padding-right: 15px;
+    color: @error; /* DYNAMIC */
+}
+
+/* --- Hover & Active --- */
+#workspaces button {
+    color: @on_surface_variant;
+    padding: 0 4px;
+}
+#workspaces button.active {
+    color: @primary;
+}
+#workspaces button:hover {
+    color: @secondary;
+}
+
+#network:hover, #bluetooth:hover, #custom-power:hover {
+    color: @primary;
+}
