@@ -2,8 +2,13 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "small",
+    "source": "arch",
     "color": {
       "1": "magenta"
+    },
+    "padding": {
+      "top": 1,
+      "right": 2
     }
   },
   "display": {
@@ -11,9 +16,6 @@
     "color": {
       "keys": "magenta",
       "title": "magenta"
-    },
-    "key": {
-      "width": 10
     }
   },
   "modules": [
@@ -23,57 +25,35 @@
     },
     {
       "type": "custom",
-      "format": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      "format": "──────────────────────────────"
     },
     {
       "type": "os",
-      "key": "󰘵 OS",
-      "keyColor": "magenta"
+      "key": " OS"
     },
     {
       "type": "kernel",
-      "key": "󰒋 Kernel",
-      "keyColor": "magenta"
+      "key": "󰒋 Ker"
     },
     {
       "type": "uptime",
-      "key": "󰅐 Uptime",
-      "keyColor": "magenta"
+      "key": "󰅐 Upt"
     },
     {
       "type": "packages",
-      "key": "󰏖 Packages",
-      "keyColor": "magenta"
+      "key": "󰏖 Pkg"
     },
     {
       "type": "shell",
-      "key": "󰞷 Shell",
-      "keyColor": "magenta"
+      "key": "󰞷 Sh"
     },
     {
       "type": "wm",
-      "key": "󱂬 WM",
-      "keyColor": "magenta"
-    },
-    {
-      "type": "terminal",
-      "key": "󰆍 Terminal",
-      "keyColor": "magenta"
+      "key": "󱂬 WM"
     },
     {
       "type": "memory",
-      "key": "󰍛 Memory",
-      "keyColor": "magenta"
-    },
-    {
-      "type": "cpu",
-      "key": "󰻠 CPU",
-      "keyColor": "magenta"
-    },
-    {
-      "type": "gpu",
-      "key": "󰢮 GPU",
-      "keyColor": "magenta"
+      "key": "󰍛 Mem"
     },
     "break",
     "colors"

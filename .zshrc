@@ -103,9 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ── Custom Prompt (Match Screenshot Pill Style) ──
-PROMPT='%F{magenta}%K{magenta}%F{black}  %F{white} %~ %k%F{magenta}%f '
-RPROMPT='%F{green}✔%f'
+# ── Custom Prompt (Optimized Pill Style) ──
+# %{...%} wraps non-printing characters so Zsh calculates width correctly
+PROMPT=$'\n%{%F{magenta}%}%{%K{magenta}%}%{%F{black}%}  %{%F{white}%} %~ %{%k%}%{%F{magenta}%}%{%f%}\n%{%F{magenta}%}❯ %{%f%}'
+RPROMPT='' # Keep it clean
 
 # Display fastfetch on shell startup
 fastfetch
