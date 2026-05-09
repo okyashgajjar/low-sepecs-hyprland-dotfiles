@@ -55,6 +55,14 @@
       "type": "memory",
       "key": "󰍛 Mem"
     },
+    {
+      "type": "cpu",
+      "key": "󰻠 CPU"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 GPU"
+    },
     "break",
     "colors"
   ]
