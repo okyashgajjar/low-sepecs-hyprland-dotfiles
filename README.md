@@ -1,113 +1,110 @@
 # ❄️ Low-Spec Hyprland Rice
 
-A lightweight, aesthetically pleasing Hyprland configuration optimized for low-end hardware (e.g., Intel Celeron N4020). Built for speed without sacrificing the modern "blurred" look through clever color palettes and efficient module design.
+<div align="center">
+  <img src="https://img.shields.io/github/stars/okyashgajjar/low-sepecs-hyprland-dotfiles?style=for-the-badge&logo=github&color=b4befe" />
+  <img src="https://img.shields.io/github/last-commit/okyashgajjar/low-sepecs-hyprland-dotfiles?style=for-the-badge&logo=git&color=a6e3a1" />
+  <img src="https://img.shields.io/github/repo-size/okyashgajjar/low-sepecs-hyprland-dotfiles?style=for-the-badge&logo=files&color=f9e2af" />
+</div>
+
+<p align="center">
+  <b>A lightweight, aesthetically pleasing Hyprland configuration optimized for low-end hardware.</b><br>
+  <i>Built for speed without sacrificing the modern "blurred" look.</i>
+</p>
+
+<div align="center">
+  <a href="#-gallery">Gallery</a> •
+  <a href="#-highlights">Highlights</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-keybinds">Keybinds</a> •
+  <a href="#-credits">Credits</a>
+</div>
+
+---
+
+## ✨ Sparkles Dotfiles Showcase ✨
 
 ![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/homepage.jpg)
-![System Monitor (htop)](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/htop.jpg)
+
+### 🖼️ Gallery
+| Noro Theme (Modular Pill) | Material Theme |
+| :---: | :---: |
+| ![Noro](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/minimal-dark.jpg) | ![Material](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/mount-fuji.jpg) |
+
+| Retro Styled | Bottom Dock |
+| :---: | :---: |
+| ![Retro](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/retro-styled.jpg) | ![Bottom](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/bottom.jpg) |
+
+---
 
 ## 🚀 Highlights
-- **Dynamic Theming**: Powered by **Matugen**, colors automatically shift to match your wallpaper.
-- **Theme-Aware Selectors**: Specialized menus to change wallpapers and Waybar styles specifically for your active theme.
-- **Included Wallpapers**: A curated set of wallpapers is bundled, organized by theme for instant use.
-- **Modular Pill Aesthetic**: Introducing the **Noro** theme — a clean, modular pill-styled Waybar with dynamic user branding.
-- **Hardware Verified**: Tested on 2-core processors with 4GB RAM.
 
-## 🛠️ System Requirements
-- **OS**: Arch Linux or EndeavourOS (required for the package names in `install.sh`).
-- **Hardware**: Optimized for low-spec (Celeron N4020+), but works perfectly on high-end systems.
-- **AUR Helper**: `yay` or `paru` (required for Matugen and Ghostty).
+- 🎨 **Dynamic Theming**: Powered by **Matugen**, colors automatically shift to match your wallpaper.
+- 🛠️ **Theme-Aware Selectors**: Specialized menus to change wallpapers and Waybar styles specifically for your active theme.
+- 📦 **Organized Wallpapers**: A curated set of wallpapers bundled and organized by theme for instant use.
+- 󰘵 **Modular Pill Aesthetic**: Introducing the **Noro** theme — a clean, modular pill-styled Waybar with dynamic user branding.
+- ⚡ **Low-Spec Optimized**: Animations and blur are tuned to maintain high performance even on Celeron N4020 systems.
 
-## 📦 Core Dependencies
-These will be installed automatically by `install.sh`, but are listed here for manual setup:
+---
 
-| Component | Package Name | Purpose |
-| :--- | :--- | :--- |
-| **Window Manager** | `hyprland` | Core desktop environment |
-| **Status Bar** | `waybar` | Top panel with Matugen integration |
-| **Wallpaper** | `awww` | High-performance wallpaper daemon |
-| **App Menu** | `rofi-wayland` | Application launcher and power menu |
-| **Notifications** | `dunst` | Minimalist notification daemon |
-| **Theming** | `matugen-bin` | **Critical**: Generates colors from wallpapers |
-| **Terminal** | `kitty` or `ghostty` | GPU-accelerated terminals |
-| **Shell** | `zsh` | Default shell (includes Oh My Zsh) |
-| **System Fetch**| `fastfetch` | Shows system info on terminal startup |
-| **Brightness** | `brightnessctl` | Backlight control |
-| **Audio** | `wireplumber` | Audio control via `wpctl` |
+> [!IMPORTANT]
+> **Read this First**
+> This install script is intended for Arch Linux or EndeavourOS. It will automatically install dependencies using `yay`. Please ensure you have an AUR helper installed before running.
 
-## 󰛖 Fonts Required
-For the icons to display correctly, you **must** have a Nerd Font installed:
-- `ttf-jetbrains-mono-nerd` (Default in this rice)
-- `ttf-font-awesome` (Optional backup)
+> [!CAUTION]
+> **Backup your system**
+> Always backup your existing `.config` files before running the installer. The script will attempt to create a backup in `~/.config_backup_...`, but manual safety is recommended.
 
-## 📦 Programs
-List of programs and tools I use.
-
-| Component | Program |
-| :--- | :--- |
-| **Windows Manager** 🪟 | `hyprland` |
-| **Terminal** 🖥️ | `kitty` |
-| **Shell** 🐚 | `zsh` / theme |
-| **Fetch** 🖼️ | `catnip` / icon |
-| **File Manager** 📁 | `ranger` |
-| **Editor** 📝 | `neovim` / `nvchad` |
-| **Browser** 🌐 | `firefox` / startpage / startpage wal |
-| **Bar** 📊 | `waybar` |
-| **Launcher** 🚀 | `rofi` |
-| **Color Theme** 🎨 | `pywal` |
-| **Lockscreen** 🔒 | `hyprlock` |
-| **Login Menu** 🚪 | `sddm` |
-| **Music Player** 🎵 | `ncspot` |
-| **Visualiser** 📊 | `cava` |
-| **Lyrics** 🎤 | `sptlrx` |
-| **Pomodoro** 🍅 | `tomato-c` |
-| **Others** 🌱 | `cbonsai`, `colorscripts`, `asciiquarium` |
+---
 
 ## 📦 Installation
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/okyashgajjar/low-sepecs-hyprland-dotfiles.git
-cd low-sepecs-hyprland-dotfiles
-```
+### 🆕 Prerequisites
+- **AUR Helper**: `yay` or `paru` (required for Matugen and Ghostty).
+- **Base System**: Arch Linux / EndeavourOS (Minimal install recommended).
 
-### 2. Run the install script
+### 🚀 Quick Install
 ```bash
+git clone --depth=1 https://github.com/okyashgajjar/low-sepecs-hyprland-dotfiles.git
+cd low-sepecs-hyprland-dotfiles
 chmod +x install.sh
 ./install.sh
 ```
 
-### 3. Manual Installation (Other Hardware)
-If you are on a high-spec system and want to enable blur/animations:
-1. Copy the `.config/` directories to your `~/.config/`.
-2. Edit `~/.config/hypr/hyprland.conf`:
-   - Set `animations { enabled = true }`
-   - Set `decoration { blur { enabled = true } }`
+---
 
 ## ⌨️ Keybinds
-- `SUPER + Return`: Terminal (Kitty)
-- `SUPER + Space`: App Menu (Rofi)
-- `SUPER + B`: Browser (Brave)
-- `SUPER + Q`: Kill Active Window
-- `SUPER + T`: Select Wallpaper & Update Theme
-- `SUPER + SHIFT + 1-9`: Move window to workspace
 
+| Keybind | Action |
+| :--- | :--- |
+| `SUPER + Return` | Open Terminal (Kitty) |
+| `SUPER + Space` | App Launcher (Rofi) |
+| `SUPER + B` | Launch Browser (Brave) |
+| `SUPER + Q` | Kill Active Window |
+| `SUPER + T` | **Theme / Wallpaper Selector** |
+| `SUPER + SHIFT + C` | Reload Hyprland |
+| `SUPER + SHIFT + 1-9`| Move Window to Workspace |
 
-## Waybar-Styles
+---
 
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/bottom)
+## 🛠️ Core Stack
+| Component | Program |
+| :--- | :--- |
+| **Window Manager** | `Hyprland` |
+| **Status Bar** | `Waybar` |
+| **Wallpaper** | `Awww` / `SWWW` |
+| **Launcher** | `Rofi-Wayland` |
+| **Theming** | `Matugen` |
+| **Terminal** | `Kitty` / `Ghostty` |
 
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/retro-styled.jpg)
+---
 
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/minimal-dark.jpg)
+## 📒 Final Notes
+*   **Performance**: If you are on high-end hardware, feel free to re-enable blur and animations in `hyprland.conf`.
+*   **Fonts**: The default font is **JetBrainsMono Nerd Font**.
 
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/mount-fuji.jpg)
-
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/dynamic-island.jpg)
-
-![Hyprland Rice Preview](https://raw.githubusercontent.com/okyashgajjar/low-sepecs-hyprland-dotfiles/main/Gnome-desktop.jpg)
-
-### 󰘵 Noro Style
-A modular, pill-based design that groups system info into floating segments. Features a dynamic user-branded box and circular workspace indicators. Completely theme-aware.
+### 🤝 Credits & Support
+- **Hyprland**: For the amazing tiling manager.
+- **Support**: A Star 🌟 on my Github repo would be appreciated!
 
 ---
 *Developed with love for low-spec warriors.*
