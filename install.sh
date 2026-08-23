@@ -15,40 +15,69 @@ if [ ! -f /etc/arch-release ]; then
     exit 1
 fi
 
-# List of dependencies
+# List of dependencies (awww is the wallpaper daemon used here; swww/hyprpaper also work)
 DEPS=(
-    "hyprland" "waybar" "swww" "rofi-wayland" "dunst" "kitty" 
+    "hyprland" "waybar" "rofi-wayland" "dunst" "kitty"
     "matugen-bin" "ttf-jetbrains-mono-nerd" "brightnessctl" "wireplumber"
     "zsh" "fastfetch" "curl" "git" "rsync"
 )
+# awww/swww/hyprpaper are alternatives for wallpaper — ensure one is present
+WALLPAPER_DEPS=("awww" "swww" "hyprpaper")
 
-# Install dependencies if using yay
-if command -v yay &> /dev/null; then
-    echo "📦 Installing dependencies..."
-    yay -S --needed "${DEPS[@]}"
+# Install dependencies if using an AUR helper (yay/paru)
+AUR_HELPER=""
+if command -v yay &> /dev/null; then AUR_HELPER="yay"
+elif command -v paru &> /dev/null; then AUR_HELPER="paru"
+fi
+
+if [ -n "$AUR_HELPER" ]; then
+    echo "📦 Installing dependencies via $AUR_HELPER..."
+    $AUR_HELPER -S --needed "${DEPS[@]}"
+    # Try to ensure a wallpaper daemon is present (non-fatal if AUR package missing)
+    for wp in "${WALLPAPER_DEPS[@]}"; do
+        if ! pacman -Qi "$wp" &>/dev/null && ! command -v "$wp" &>/dev/null; then
+            echo "   → trying $wp..."
+            $AUR_HELPER -S --needed "$wp" 2>/dev/null || true
+            command -v "$wp" &>/dev/null && break
+            command -v awww &>/dev/null && break
+            command -v swww &>/dev/null && break
+        else
+            break
+        fi
+    done
 else
-    echo "⚠️ Please ensure you have the following installed: ${DEPS[*]}"
+    echo "⚠️ No AUR helper (yay/paru) found — please ensure manually: ${DEPS[*]} + one of: ${WALLPAPER_DEPS[*]}"
 fi
 
 # Backup existing configs
 BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 
-CONFIGS=("hypr" "waybar" "kitty" "rofi" "dunst" "matugen")
+CONFIGS=("hypr" "waybar" "kitty" "rofi" "dunst" "matugen" "nvim" "fastfetch")
 
 echo "📂 Setting up configurations..."
 for config in "${CONFIGS[@]}"; do
+    if [ ! -d ".config/$config" ]; then
+        # skip optional configs not present in repo (e.g. gtk configs are intentionally user-local)
+        continue
+    fi
     if [ -d "$HOME/.config/$config" ]; then
         echo "   - Backing up ~/.config/$config"
         mv "$HOME/.config/$config" "$BACKUP_DIR/"
     fi
-    cp -r ".config/$config" "$HOME/.config/"
+    # -a preserves symlinks (theme.conf/theme.lua → themes/noro/...) and permissions
+    cp -a ".config/$config" "$HOME/.config/"
 done
 
 # Install wallpapers (organized by theme)
 echo "🖼️ Installing organized wallpapers..."
 mkdir -p "$HOME/wallpapers"
-cp -r wallpapers/* "$HOME/wallpapers/"
+# -a preserves structure; copy only if wallpapers exists in repo
+if [ -d "wallpapers" ]; then
+    cp -a wallpapers/. "$HOME/wallpapers/"
+else
+    echo "   ⚠️ wallpapers/ not found in repo — skipping"
+fi
 
 # Set permissions for scripts
 echo "🔑 Setting executable permissions for scripts..."
@@ -84,5 +113,30 @@ if [ -f ".zshrc" ]; then
     cp ".zshrc" "$HOME/.zshrc"
 fi
 
-echo "✅ Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C)."
-echo "Your old configs are saved in: $BACKUP_DIR"
+# Post-install sanity check: which Hyprland config will be used?
+if command -v hyprctl &>/dev/null; then
+    HYPR_VER=$(hyprctl version 2>/dev/null | head -n1 || hyprland --version 2>/dev/null | head -n1 || echo "unknown")
+    echo "   Hyprland: $HYPR_VER"
+    if [ -f "$HOME/.config/hypr/hyprland.lua" ] && [ -f "$HOME/.config/hypr/hyprland.conf" ]; then
+        echo "   → Both hyprland.lua (0.55+ Lua) and hyprland.conf (legacy) present. Hyprland 0.55+ prefers hyprland.lua."
+        echo "     • Hyprland ≥0.55 → hyprland.lua + theme.lua/colors.lua (Matugen writes both .conf/.lua)"
+        echo "     • Hyprland <0.55 → hyprland.conf + theme.conf/colors.conf (fallback)"
+    fi
+    # Validate lua syntax when lua is available
+    if command -v luac &>/dev/null && [ -f "$HOME/.config/hypr/hyprland.lua" ]; then
+        luac -p "$HOME/.config/hypr/hyprland.lua" && echo "   ✓ hyprland.lua syntax OK" || echo "   ✗ hyprland.lua has syntax errors — check hyprctl configerrors"
+    fi
+fi
+if [ -f "$HOME/.config/hypr/theme.lua" ]; then
+    echo "   ✓ theme.lua → $(readlink "$HOME/.config/hypr/theme.lua" 2>/dev/null || echo "present")"
+fi
+if [ -f "$HOME/.config/hypr/theme.conf" ]; then
+    echo "   ✓ theme.conf → $(readlink "$HOME/.config/hypr/theme.conf" 2>/dev/null || echo "present")"
+fi
+
+echo "✅ Done! Please restart your session or reload Hyprland (SUPER + SHIFT + C / hyprctl reload)."
+echo "   Your old configs are saved in: $BACKUP_DIR"
+echo "   Tips:"
+echo "     • Change theme: SUPER+T (theme) / SUPER+SHIFT+T (global) / SUPER+W (waybar)"
+echo "     • Change wallpaper: SUPER+T → Change Wallpaper (theme-aware, Matugen regenerates colors.lua+colors.conf)"
+echo "     • If Hyprland fails to start, fallback is hyprland.conf — remove hyprland.lua to force legacy"
