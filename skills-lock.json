@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "hyprland-lua": {
+      "source": "janusfil/ai-skills",
+      "sourceType": "github",
+      "skillPath": "hyprland-lua/SKILL.md",
+      "computedHash": "41e8a5f19121a9a443bc8e57e958fc5fa03f7bef24277e1dde7a6f9133d4db4a"
+    },
+    "hyprland-lua-migration": {
+      "source": "dabstractor/hyprland-lua-migration",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "94c85ace76edfad090e60e050cd9ea72d76260eb3715b796cc913e670486be86"
+    }
+  }
+}

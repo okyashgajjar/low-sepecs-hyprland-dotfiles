@@ -32,6 +32,10 @@ esac
 
 # ── 1. Apply Selections ──
 ln -sf "$HOME/.config/hypr/themes/$HYPR/theme.conf" "$HOME/.config/hypr/theme.conf"
+# Lua (0.55+) — keep theme.lua in sync if the lua counterpart exists
+if [ -f "$HOME/.config/hypr/themes/$HYPR/theme.lua" ]; then
+    ln -sf "$HOME/.config/hypr/themes/$HYPR/theme.lua" "$HOME/.config/hypr/theme.lua"
+fi
 ln -sf "$HOME/.config/waybar/themes/$WAYBAR/config.jsonc" "$HOME/.config/waybar/config.jsonc"
 ln -sf "$HOME/.config/waybar/themes/$WAYBAR/style.css" "$HOME/.config/waybar/style.css"
 ln -sf "$HOME/.config/rofi/themes/$HYPR/launcher.rasi" "$HOME/.config/rofi/active-launcher.rasi"

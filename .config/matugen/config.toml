@@ -18,6 +18,10 @@ output_path = "~/.config/rofi/colors.rasi"
 input_path = "~/.config/matugen/templates/hyprland.conf"
 output_path = "~/.config/hypr/colors.conf"
 
+[templates.hyprland_lua]
+input_path = "~/.config/matugen/templates/hyprland.lua"
+output_path = "~/.config/hypr/colors.lua"
+
 [templates.pywalfox]
 input_path = "~/.config/matugen/templates/pywalfox.json"
 output_path = "~/.cache/wal/colors.json"

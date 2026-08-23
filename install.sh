@@ -55,9 +55,12 @@ echo "🔑 Setting executable permissions for scripts..."
 chmod +x "$HOME/.config/hypr/scripts/"*
 chmod +x "$HOME/.config/waybar/scripts/"*
 
-# Initial Theme Setup (Noro by default)
+# Initial Theme Setup (Noro by default) — hyprlang .conf + Lua .lua (0.55+)
 echo "🎨 Initializing Noro theme..."
 ln -sf "$HOME/.config/hypr/themes/noro/theme.conf" "$HOME/.config/hypr/theme.conf"
+if [ -f "$HOME/.config/hypr/themes/noro/theme.lua" ]; then
+    ln -sf "$HOME/.config/hypr/themes/noro/theme.lua" "$HOME/.config/hypr/theme.lua"
+fi
 ln -sf "$HOME/.config/waybar/themes/noro/config.jsonc" "$HOME/.config/waybar/config.jsonc"
 ln -sf "$HOME/.config/waybar/themes/noro/style.css" "$HOME/.config/waybar/style.css"
 ln -sf "$HOME/.config/rofi/themes/noro/launcher.rasi" "$HOME/.config/rofi/active-launcher.rasi"
